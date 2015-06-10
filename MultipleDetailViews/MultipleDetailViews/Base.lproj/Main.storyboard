@@ -2,12 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navMain" title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cRC-bJ-bQv"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -54,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-360" y="589"/>
+            <point key="canvasLocation" x="-148" y="517"/>
         </scene>
         <!--Detail-->
         <scene sceneID="8BV-5u-9Uu">
@@ -91,12 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-nk-EsW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="589"/>
+            <point key="canvasLocation" x="907" y="697"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="split" id="H1p-Uh-vWS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -105,12 +107,12 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1200" y="-1272"/>
+            <point key="canvasLocation" x="-1524" y="-1596"/>
         </scene>
         <!--TableView1-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="TableView1" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Master" title="TableView1" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +143,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="oZf-up-Ryo"/>
                     <navigationItem key="navigationItem" title="EuAluno" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail1" id="ExQ-MK-aJu"/>
@@ -196,10 +199,11 @@
             </objects>
             <point key="canvasLocation" x="1245" y="-1272"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController storyboardIdentifier="detail1Nav" id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fdk-oL-URy"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -209,12 +213,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-360" y="-287"/>
+            <point key="canvasLocation" x="-420" y="-259"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="2D9-kM-0vo">
             <objects>
                 <navigationController id="2QC-Js-4iA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sq9-Pi-rSD"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="L2k-H9-91Y">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -226,9 +231,49 @@
             </objects>
             <point key="canvasLocation" x="551" y="-271"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Oxh-Bo-CXb">
+            <objects>
+                <viewController storyboardIdentifier="HKMenuView" id="RhP-cT-f8v" customClass="HKMenuView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GjF-Aq-K2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="fxb-cm-bv0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EfE-bF-Bvp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-n8-dJM">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RhP-cT-f8v" id="80I-IX-dAs"/>
+                                    <outlet property="delegate" destination="RhP-cT-f8v" id="I8C-8t-B19"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ybv-n8-dJM" firstAttribute="leading" secondItem="EfE-bF-Bvp" secondAttribute="leadingMargin" constant="4" id="5mG-aB-UTV"/>
+                            <constraint firstItem="ybv-n8-dJM" firstAttribute="top" secondItem="GjF-Aq-K2Y" secondAttribute="bottom" constant="20" id="Ujm-E5-czO"/>
+                            <constraint firstItem="fxb-cm-bv0" firstAttribute="top" secondItem="ybv-n8-dJM" secondAttribute="bottom" constant="20" id="bL7-0o-3EO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ybv-n8-dJM" secondAttribute="trailing" constant="4" id="zS9-98-2D4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="m7v-Mr-6JF"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ybv-n8-dJM" id="MDP-mj-4Cu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31q-XV-Etc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1512" y="-533"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ti9-yv-nhf"/>
-        <segue reference="p4V-wC-Eu9"/>
+        <segue reference="Tll-UG-LXB"/>
+        <segue reference="aMD-Sm-AXY"/>
     </inferredMetricsTieBreakers>
 </document>
