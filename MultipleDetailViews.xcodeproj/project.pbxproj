@@ -21,6 +21,7 @@
 		8B0996DE1B28B14F00793090 /* HKMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996DD1B28B14F00793090 /* HKMenuView.m */; };
 		8B0996E11B28B20E00793090 /* HKRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */; };
 		8B0996E31B28B52E00793090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996E21B28B52E00793090 /* main.m */; };
+		D69606771B28E61000C9E8F6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D69606751B28E61000C9E8F6 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8B0996DF1B28B20E00793090 /* HKRotationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKRotationNavigationController.h; sourceTree = "<group>"; };
 		8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKRotationNavigationController.m; sourceTree = "<group>"; };
 		8B0996E21B28B52E00793090 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D69606761B28E61000C9E8F6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0A9A4BBC19F2785B00F81929 /* Main.storyboard */,
 				0A9A4BBF19F2785B00F81929 /* Images.xcassets */,
 				0A9A4BC119F2785B00F81929 /* LaunchScreen.xib */,
+				D69606751B28E61000C9E8F6 /* Model.xcdatamodeld */,
 				0A9A4BB419F2785B00F81929 /* Supporting Files */,
 			);
 			path = MultipleDetailViews;
@@ -116,12 +119,12 @@
 			children = (
 				0A9A4BB519F2785B00F81929 /* Info.plist */,
 				8B0996E21B28B52E00793090 /* main.m */,
+				8B0996D91B28AFEA00793090 /* HKAppDelegate.h */,
+				8B0996DA1B28AFEA00793090 /* HKAppDelegate.m */,
 				8B0996DF1B28B20E00793090 /* HKRotationNavigationController.h */,
 				8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */,
 				8B0996DC1B28B14F00793090 /* HKMenuView.h */,
 				8B0996DD1B28B14F00793090 /* HKMenuView.m */,
-				8B0996D91B28AFEA00793090 /* HKAppDelegate.h */,
-				8B0996DA1B28AFEA00793090 /* HKAppDelegate.m */,
 				8B0996D61B287E5300793090 /* HKSlideMenu3DController.h */,
 				8B0996D71B287E5300793090 /* HKSlideMenu3DController.m */,
 				8B0996D51B287E5200793090 /* MultipleDetailViews-Bridging-Header.h */,
@@ -255,6 +258,7 @@
 				8B0996E11B28B20E00793090 /* HKRotationNavigationController.m in Sources */,
 				0A9A4BDB19F291A400F81929 /* DetailViewController2.swift in Sources */,
 				8B0996DB1B28AFEA00793090 /* HKAppDelegate.m in Sources */,
+				D69606771B28E61000C9E8F6 /* Model.xcdatamodeld in Sources */,
 				0A9A4BB719F2785B00F81929 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +470,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D69606751B28E61000C9E8F6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D69606761B28E61000C9E8F6 /* Model.xcdatamodel */,
+			);
+			currentVersion = D69606761B28E61000C9E8F6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A9A4BA919F2785B00F81929 /* Project object */;
 }
