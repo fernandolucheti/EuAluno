@@ -9,10 +9,27 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
+    
 
     override func viewDidLoad() {
         //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        
+        
+        ///------ Teste CoreData ---------- OK ------
+        var avaliacao = AvaliacaoManager.sharedInstance.novaAvaliacao()
+        avaliacao.nome = "P1"
+        avaliacao.disciplina = "LP"
+        
+        AvaliacaoManager.sharedInstance.salvar()
+        
+        let ss = AvaliacaoManager.sharedInstance.buscarProdutos()[0].nome
+        print(ss)
+        
+        //-------------------------------------------
+        
+        
+        
+        
     }
     // MARK: - Segues
 
