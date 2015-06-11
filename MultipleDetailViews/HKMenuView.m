@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    images = @[@"mail-ico",@"call-ico",@"call-ico"];
-    titles = @[@"+Trabalho",@"+Prova",@"Agenda"];
+    images = @[@"mail-ico",@"call-ico",@"call-ico",@"call-ico"];
+    titles = @[@"+ Disciplina",@"+ Trabalho",@"+ Prova",@"Agenda"];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -77,8 +77,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if (indexPath.row % 2) {
-        [[HKAppDelegate mainDelegate] setSecondView];
+    if (indexPath.row == 0) {
+
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        [self showViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"navCadastro"] sender:nil];
     }else{
         [[HKAppDelegate mainDelegate] setFirstView];
     }
