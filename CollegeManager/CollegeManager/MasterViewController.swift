@@ -16,13 +16,23 @@ class MasterViewController: UITableViewController {
         
         
         ///------ Teste CoreData ---------- OK ------
-        var avaliacao = AvaliacaoManager.sharedInstance.novaAvaliacao()
+        let disciplinaManager = DisciplinaManager.sharedInstance
+        let avaliacaoManager = AvaliacaoManager.sharedInstance
+        
+        //Nova disciplina
+        var newDisciplina = disciplinaManager.novaDisciplina()
+        newDisciplina.nome = "LP"
+        
+        var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = "P1"
-        avaliacao.disciplina = "LP"
+        avaliacao.nota = 6
+        avaliacaoManager.salvar()
         
-        AvaliacaoManager.sharedInstance.salvar()
         
-        let ss = AvaliacaoManager.sharedInstance.buscarProdutos()[0].nome
+        newDisciplina.addAvaliacao(avaliacao)
+        
+        
+        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
         print(ss)
         
         //-------------------------------------------
