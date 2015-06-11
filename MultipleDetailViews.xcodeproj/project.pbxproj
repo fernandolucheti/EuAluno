@@ -21,6 +21,9 @@
 		8B0996DE1B28B14F00793090 /* HKMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996DD1B28B14F00793090 /* HKMenuView.m */; };
 		8B0996E11B28B20E00793090 /* HKRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */; };
 		8B0996E31B28B52E00793090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0996E21B28B52E00793090 /* main.m */; };
+		D69606771B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D69606751B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodeld */; };
+		D696067B1B28EF9400C9E8F6 /* AvaliacaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696067A1B28EF9400C9E8F6 /* AvaliacaoManager.swift */; };
+		D696067F1B29006E00C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696067E1B29006E00C9E8F6 /* Avaliacao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		8B0996DF1B28B20E00793090 /* HKRotationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKRotationNavigationController.h; sourceTree = "<group>"; };
 		8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKRotationNavigationController.m; sourceTree = "<group>"; };
 		8B0996E21B28B52E00793090 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D69606761B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MultipleDetailViews.xcdatamodel; sourceTree = "<group>"; };
+		D696067A1B28EF9400C9E8F6 /* AvaliacaoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliacaoManager.swift; sourceTree = "<group>"; };
+		D696067E1B29006E00C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Avaliacao.swift; path = MultipleDetailViews/Avaliacao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				0A9A4BB619F2785B00F81929 /* AppDelegate.swift */,
+				D696067C1B28F26B00C9E8F6 /* Entidades */,
+				D696067D1B28F28500C9E8F6 /* CoreData */,
 				0A9A4BB819F2785B00F81929 /* MasterViewController.swift */,
 				0A9A4BD819F2897300F81929 /* TableViewController2.swift */,
 				0A9A4BBA19F2785B00F81929 /* DetailViewController.swift */,
@@ -106,6 +114,7 @@
 				0A9A4BBC19F2785B00F81929 /* Main.storyboard */,
 				0A9A4BBF19F2785B00F81929 /* Images.xcassets */,
 				0A9A4BC119F2785B00F81929 /* LaunchScreen.xib */,
+				D69606751B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodeld */,
 				0A9A4BB419F2785B00F81929 /* Supporting Files */,
 			);
 			path = MultipleDetailViews;
@@ -116,12 +125,12 @@
 			children = (
 				0A9A4BB519F2785B00F81929 /* Info.plist */,
 				8B0996E21B28B52E00793090 /* main.m */,
+				8B0996D91B28AFEA00793090 /* HKAppDelegate.h */,
+				8B0996DA1B28AFEA00793090 /* HKAppDelegate.m */,
 				8B0996DF1B28B20E00793090 /* HKRotationNavigationController.h */,
 				8B0996E01B28B20E00793090 /* HKRotationNavigationController.m */,
 				8B0996DC1B28B14F00793090 /* HKMenuView.h */,
 				8B0996DD1B28B14F00793090 /* HKMenuView.m */,
-				8B0996D91B28AFEA00793090 /* HKAppDelegate.h */,
-				8B0996DA1B28AFEA00793090 /* HKAppDelegate.m */,
 				8B0996D61B287E5300793090 /* HKSlideMenu3DController.h */,
 				8B0996D71B287E5300793090 /* HKSlideMenu3DController.m */,
 				8B0996D51B287E5200793090 /* MultipleDetailViews-Bridging-Header.h */,
@@ -144,6 +153,23 @@
 				0A9A4BCD19F2785B00F81929 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D696067C1B28F26B00C9E8F6 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				D696067E1B29006E00C9E8F6 /* Avaliacao.swift */,
+			);
+			name = Entidades;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D696067D1B28F28500C9E8F6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D696067A1B28EF9400C9E8F6 /* AvaliacaoManager.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +278,12 @@
 				8B0996DE1B28B14F00793090 /* HKMenuView.m in Sources */,
 				0A9A4BB919F2785B00F81929 /* MasterViewController.swift in Sources */,
 				0A9A4BD919F2897300F81929 /* TableViewController2.swift in Sources */,
+				D696067F1B29006E00C9E8F6 /* Avaliacao.swift in Sources */,
 				8B0996E11B28B20E00793090 /* HKRotationNavigationController.m in Sources */,
+				D696067B1B28EF9400C9E8F6 /* AvaliacaoManager.swift in Sources */,
 				0A9A4BDB19F291A400F81929 /* DetailViewController2.swift in Sources */,
 				8B0996DB1B28AFEA00793090 /* HKAppDelegate.m in Sources */,
+				D69606771B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodeld in Sources */,
 				0A9A4BB719F2785B00F81929 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +495,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D69606751B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D69606761B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodel */,
+			);
+			currentVersion = D69606761B28E61000C9E8F6 /* MultipleDetailViews.xcdatamodel */;
+			path = MultipleDetailViews.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A9A4BA919F2785B00F81929 /* Project object */;
 }
