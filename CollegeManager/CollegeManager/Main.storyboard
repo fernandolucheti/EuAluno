@@ -24,7 +24,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
@@ -61,7 +61,7 @@
         <!--Detail-->
         <scene sceneID="8BV-5u-9Uu">
             <objects>
-                <viewController title="Detail" id="FmA-Le-X6S" customClass="DetailViewController2" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="FmA-Le-X6S" customClass="DetailViewController2" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Pq-6u-uvT"/>
                         <viewControllerLayoutGuide type="bottom" id="LR2-zT-B7r"/>
@@ -112,7 +112,7 @@
         <!--TableView1-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController storyboardIdentifier="Master" title="TableView1" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Master" title="TableView1" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
         <!--TableView2-->
         <scene sceneID="zDw-en-5bP">
             <objects>
-                <tableViewController title="TableView2" clearsSelectionOnViewWillAppear="NO" id="zdc-Eb-Y5k" customClass="TableViewController2" customModule="MultipleDetailViews" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="TableView2" clearsSelectionOnViewWillAppear="NO" id="zdc-Eb-Y5k" customClass="TableViewController2" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hBQ-xN-evV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,10 +287,10 @@
             </objects>
             <point key="canvasLocation" x="-1847" y="271"/>
         </scene>
-        <!--Title-->
+        <!--Cadastro-->
         <scene sceneID="gh0-Xc-0EB">
             <objects>
-                <viewController id="Qjk-wU-SUu" sceneMemberID="viewController">
+                <viewController id="Qjk-wU-SUu" customClass="CadastroViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0CM-Ez-qdB"/>
                         <viewControllerLayoutGuide type="bottom" id="caK-wd-9ng"/>
@@ -298,10 +298,54 @@
                     <view key="view" contentMode="scaleToFill" id="92e-2g-knz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgq-iK-4Nt">
+                                <rect key="frame" x="277" y="143" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPv-We-u8r">
+                                <rect key="frame" x="252" y="177" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Disciplina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-lG-ppc">
+                                <rect key="frame" x="263" y="230" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gnj-H7-0lg">
+                                <rect key="frame" x="252" y="266" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-se-PmG">
+                                <rect key="frame" x="277" y="326" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-zX-FSq">
+                                <rect key="frame" x="252" y="360" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="bvW-H3-jhY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NXZ-u7-KIO"/>
+                    <navigationItem key="navigationItem" title="Cadastro" id="bvW-H3-jhY">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="NXZ-u7-KIO">
+                            <connections>
+                                <action selector="didPressBackButton:" destination="Qjk-wU-SUu" id="uPw-fy-AUE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="0kl-1Q-l98">
+                            <connections>
+                                <action selector="didPressSaveButton:" destination="Qjk-wU-SUu" id="CvU-Gj-OGf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tY-kQ-SHk" userLabel="First Responder" sceneMemberID="firstResponder"/>

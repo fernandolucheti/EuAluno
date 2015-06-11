@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B1B38791B290FCE003381E5 /* CollegeManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B38771B290FCE003381E5 /* CollegeManager.xcdatamodeld */; };
+		8B1FEA2E1B29AA720016F6E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1FEA2D1B29AA720016F6E1 /* Main.storyboard */; };
+		8B1FEA301B29AA7C0016F6E1 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */; };
 		8B3023731B290C2000C21CFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B3023721B290C2000C21CFF /* Images.xcassets */; };
 		8B3023761B290C2000C21CFF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3023741B290C2000C21CFF /* LaunchScreen.xib */; };
 		8B3023821B290C2000C21CFF /* CollegeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023811B290C2000C21CFF /* CollegeManagerTests.swift */; };
@@ -16,7 +18,6 @@
 		8B3023921B290C4700C21CFF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B30238E1B290C4700C21CFF /* DetailViewController.swift */; };
 		8B3023931B290C4700C21CFF /* DetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B30238F1B290C4700C21CFF /* DetailViewController2.swift */; };
 		8B3023971B290C6900C21CFF /* AvaliacaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023961B290C6900C21CFF /* AvaliacaoManager.swift */; };
-		8B30239B1B290C8400C21CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B30239A1B290C8400C21CFF /* Main.storyboard */; };
 		8B3023A61B290C9800C21CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B30239C1B290C9800C21CFF /* main.m */; };
 		8B3023A71B290C9800C21CFF /* HKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B30239E1B290C9800C21CFF /* HKAppDelegate.m */; };
 		8B3023A81B290C9800C21CFF /* HKRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		8B1B38781B290FCE003381E5 /* CollegeManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CollegeManager.xcdatamodel; sourceTree = "<group>"; };
+		8B1FEA2D1B29AA720016F6E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		8B3023641B290C2000C21CFF /* CollegeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3023681B290C2000C21CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B3023721B290C2000C21CFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		8B30238E1B290C4700C21CFF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B30238F1B290C4700C21CFF /* DetailViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController2.swift; sourceTree = "<group>"; };
 		8B3023961B290C6900C21CFF /* AvaliacaoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliacaoManager.swift; sourceTree = "<group>"; };
-		8B30239A1B290C8400C21CFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8B30239C1B290C9800C21CFF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B30239D1B290C9800C21CFF /* HKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKAppDelegate.h; sourceTree = "<group>"; };
 		8B30239E1B290C9800C21CFF /* HKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKAppDelegate.m; sourceTree = "<group>"; };
@@ -109,11 +111,12 @@
 				D69606881B291B6F00C9E8F6 /* CoreData */,
 				8B30238C1B290C4700C21CFF /* MasterViewController.swift */,
 				8B30238D1B290C4700C21CFF /* TableViewController2.swift */,
+				8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */,
 				8B30238E1B290C4700C21CFF /* DetailViewController.swift */,
 				8B30238F1B290C4700C21CFF /* DetailViewController2.swift */,
 				8B1B38771B290FCE003381E5 /* CollegeManager.xcdatamodeld */,
-				8B30239A1B290C8400C21CFF /* Main.storyboard */,
 				8B3023721B290C2000C21CFF /* Images.xcassets */,
+				8B1FEA2D1B29AA720016F6E1 /* Main.storyboard */,
 				8B3023741B290C2000C21CFF /* LaunchScreen.xib */,
 				8B3023671B290C2000C21CFF /* Supporting Files */,
 			);
@@ -254,7 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B30239B1B290C8400C21CFF /* Main.storyboard in Resources */,
+				8B1FEA2E1B29AA720016F6E1 /* Main.storyboard in Resources */,
 				8B3023761B290C2000C21CFF /* LaunchScreen.xib in Resources */,
 				8B3023731B290C2000C21CFF /* Images.xcassets in Resources */,
 			);
@@ -287,6 +290,7 @@
 				8B1B38791B290FCE003381E5 /* CollegeManager.xcdatamodeld in Sources */,
 				8B3023931B290C4700C21CFF /* DetailViewController2.swift in Sources */,
 				8B3023A61B290C9800C21CFF /* main.m in Sources */,
+				8B1FEA301B29AA7C0016F6E1 /* CadastroViewController.swift in Sources */,
 				8B3023901B290C4700C21CFF /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
