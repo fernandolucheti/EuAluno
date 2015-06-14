@@ -33,11 +33,12 @@ class MasterViewController: UITableViewController {
         
         
         let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
-        println(ss)
+        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
+        println("\(ss) - \(rr)")
         
         
         let ckh = CloudKitHelper()
-        ckh.saveRecord("blá blá")
+        ckh.saveTodo("blá blá 22")
         
         
         

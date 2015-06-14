@@ -115,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */,
-				D69606881B291B6F00C9E8F6 /* CoreData */,
 				D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */,
+				D69606881B291B6F00C9E8F6 /* CoreData */,
 				8B30238C1B290C4700C21CFF /* MasterViewController.swift */,
 				8B30238D1B290C4700C21CFF /* TableViewController2.swift */,
 				8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */,

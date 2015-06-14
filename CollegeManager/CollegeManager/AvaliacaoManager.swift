@@ -13,6 +13,7 @@ public class AvaliacaoManager {
    
     static let sharedInstance = AvaliacaoManager()
     static let entityName = "Avaliacao"
+    var avaliacao: Avaliacao?   //Recebe o objeto do managedContext
     
     lazy var managedContext:NSManagedObjectContext = {
         var appDelegate = UIApplication.sharedApplication().delegate as! HKAppDelegate
@@ -25,13 +26,17 @@ public class AvaliacaoManager {
     
     func novaAvaliacao() -> Avaliacao
     {
-        return NSEntityDescription.insertNewObjectForEntityForName(AvaliacaoManager.entityName, inManagedObjectContext: managedContext) as! Avaliacao
+        avaliacao = NSEntityDescription.insertNewObjectForEntityForName(AvaliacaoManager.entityName, inManagedObjectContext: managedContext) as? Avaliacao
+        return avaliacao!
     }
     
     func salvar()
     {
         var error:NSError?
         managedContext.save(&error)
+        
+        let ckh = CloudKitHelper()
+        ckh.saveAvaliacao(avaliacao!)
         
         if let e = error {
             println("Could not save. Error: \(error), \(error!.userInfo)")

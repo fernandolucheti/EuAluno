@@ -21,6 +21,7 @@ class CloudKitHelper {
     let privateDB : CKDatabase
     var delegate : CloudKitDelegate?
     var todos = [Todos]()
+    var avaliacoes = [AvaliacaoObj]()
     
     class Todos {
         
@@ -43,22 +44,44 @@ class CloudKitHelper {
         privateDB = container.privateCloudDatabase
     }
     
-    func saveRecord(todo : NSString) {
+    func saveTodo(todo : NSString) {
+        
         let todoRecord = CKRecord(recordType: "Todos")
         todoRecord.setValue(todo, forKey: "todotext")
         publicDB.saveRecord(todoRecord, completionHandler: { (record, error) -> Void in
             println("Before saving in cloud kit : \(self.todos.count)")
             println("Saved in cloudkit")
-            self.fetchTodos(record)
+//            self.fetchTodos(record)
         })
-        
     }
     
-    func fetchTodos(insertedRecord: CKRecord?) {
+    func saveAvaliacao(avaliacao : Avaliacao) {
+        
+        let avaliRecord = CKRecord(recordType: "Avaliacao")
+        
+        avaliRecord.setValue(avaliacao.nome, forKey: "nome")
+        avaliRecord.setValue(avaliacao.nota, forKey: "nota")
+        
+        publicDB.saveRecord(avaliRecord, completionHandler: { (record, error) -> Void in
+            println("Before saving in cloud kit: \(self.avaliacoes.count)")
+            println("Saved in cloudkit")
+            self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
+        })
+    }
+    
+    func fetchAvaliacao(insertedRecord: CKRecord?, queryString: String) -> [AvaliacaoObj] {
+        
+        var tempAval = [AvaliacaoObj]()
         
         let predicate = NSPredicate(value: true)
+        
+//        Predicate example
+//        predicate = NSPredicate(format: "")   //get error
+//        predicate = [NSPredicate predicateWithFormat:@"ANY favoriteColors = 'red'"];
+//        predicate = [NSPredicate predicateWithFormat:@"favoriteColors CONTAINS 'red'"];
+
         let sort = NSSortDescriptor(key: "creationDate", ascending: false)
-        let query = CKQuery(recordType: "Todos", predicate:  predicate)
+        let query = CKQuery(recordType: "Avaliacao", predicate:  predicate)
         query.sortDescriptors = [sort]
         
         publicDB.performQuery(query, inZoneWithID: nil) {
@@ -70,40 +93,40 @@ class CloudKitHelper {
                     return
                 }
             } else {
-                self.todos.removeAll()
+//                self.avaliacoes.removeAll()
+                
+                
                 for record in results{
-                    let todo = Todos(record: record as! CKRecord, database: self.publicDB)
-                    self.todos.append(todo)
+                    let avaliacao = AvaliacaoObj(record: record as! CKRecord, database: self.publicDB)
+                    
+//                    self.avaliacoes.append(avaliacao)
+                    tempAval.append(avaliacao)
                 }
-                if let tmp = insertedRecord {
-                    let todo = Todos(record: insertedRecord! as CKRecord, database: self.publicDB)
+                if let tmp = insertedRecord {   //Pode passar 'nil' pro record se n tiver
+                    let avaliacao = AvaliacaoObj(record: insertedRecord! as CKRecord, database: self.publicDB)
+                    
                     /* Work around at the latest entry at index 0 */
-                    self.todos.insert(todo, atIndex: 0)
+                    tempAval.insert(avaliacao, atIndex: 0)
                 }
-                println("fetch after save : \(self.todos.count)")
+                
+                println("fetch after save : \(self.avaliacoes.count)")
                 dispatch_async(dispatch_get_main_queue()) {
                     self.delegate?.modelUpdated()
                     
                     
                     // teste ---------------------
-                    for ck in self.todos {
-                        println("\(ck.name!) - \(ck.text!)")
+                    for obj in tempAval {
+                        println("\(obj.nome!) - \(obj.nota!)")
                     }
-                    // -------------------
-                    
+                    // ---------------------------
                     
                     return
                 }
             }
         }
         
-        
-        
+        return tempAval
     }
-
-
-
-    
     
     
 }
