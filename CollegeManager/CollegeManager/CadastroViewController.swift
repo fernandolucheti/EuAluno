@@ -45,6 +45,8 @@ class CadastroViewController: UIViewController{
         var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = nameTextField.text!
         avaliacao.dataFinal = datePicker.date
+        avaliacao.completo = 0
+        avaliacao.tipo = 1
 //        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
         
