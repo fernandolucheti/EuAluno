@@ -63,7 +63,6 @@ class CloudKitHelper {
         avaliRecord.setValue(avaliacao.nota, forKey: "nota")
         
         publicDB.saveRecord(avaliRecord, completionHandler: { (record, error) -> Void in
-            println("Before saving in cloud kit: \(self.avaliacoes.count)")
             println("Saved in cloudkit")
             self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
         })
@@ -109,10 +108,10 @@ class CloudKitHelper {
                     tempAval.insert(avaliacao, atIndex: 0)
                 }
                 
-                println("fetch after save : \(self.avaliacoes.count)")
+                
                 dispatch_async(dispatch_get_main_queue()) {
                     self.delegate?.modelUpdated()
-                    
+                    println("Fetch after save: \(tempAval.count)")
                     
                     // teste ---------------------
                     for obj in tempAval {
