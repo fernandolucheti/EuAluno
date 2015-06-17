@@ -13,7 +13,10 @@ class CadastroViewController: UIViewController{
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var disciplinaTextField: UITextField!
+    var downPicker: DownPicker?
+
     
     override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -22,7 +25,13 @@ class CadastroViewController: UIViewController{
         
 
         //self.view.backgroundColor = UIColor.whiteColor()
-       // self.navigationBar.backItem?.title = "voltar"
+        // self.navigationBar.backItem?.title = "voltar"
+        
+        
+        
+        var ss = NSMutableArray(array: ["teste1", "teste2", "teste1"])
+        downPicker = DownPicker(textField: disciplinaTextField, withData: ss)   //Colocar array de Disciplinas
+
     }
     
     @IBAction func CancelButton(sender: UIButton) {

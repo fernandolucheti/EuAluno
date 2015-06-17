@@ -40,6 +40,11 @@
 		8BABC7791B320D9100367968 /* Books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7781B320D9100367968 /* Books.jpg */; };
 		8BABC77B1B320DE100367968 /* books2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC77A1B320DE100367968 /* books2.png */; };
 		8BABC77D1B3212E700367968 /* CadastroDisciplinaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */; };
+		D60A085C1B32247A007B25E6 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08551B32247A007B25E6 /* downArrow.png */; };
+		D60A085D1B32247A007B25E6 /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08561B32247A007B25E6 /* downArrow@2x.png */; };
+		D60A085E1B32247A007B25E6 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08571B32247A007B25E6 /* downArrow@3x.png */; };
+		D60A085F1B32247A007B25E6 /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A08591B32247A007B25E6 /* DownPicker.m */; };
+		D60A08601B32247A007B25E6 /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A085B1B32247A007B25E6 /* UIDownPicker.m */; };
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
 		D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606901B292F9200C9E8F6 /* Avaliacao.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
@@ -100,6 +105,13 @@
 		8BABC7781B320D9100367968 /* Books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Books.jpg; sourceTree = "<group>"; };
 		8BABC77A1B320DE100367968 /* books2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = books2.png; sourceTree = "<group>"; };
 		8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroDisciplinaViewController.swift; sourceTree = "<group>"; };
+		D60A08551B32247A007B25E6 /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		D60A08561B32247A007B25E6 /* downArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@2x.png"; sourceTree = "<group>"; };
+		D60A08571B32247A007B25E6 /* downArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@3x.png"; sourceTree = "<group>"; };
+		D60A08581B32247A007B25E6 /* DownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownPicker.h; sourceTree = "<group>"; };
+		D60A08591B32247A007B25E6 /* DownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownPicker.m; sourceTree = "<group>"; };
+		D60A085A1B32247A007B25E6 /* UIDownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDownPicker.h; sourceTree = "<group>"; };
+		D60A085B1B32247A007B25E6 /* UIDownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDownPicker.m; sourceTree = "<group>"; };
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
 		D69606901B292F9200C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
@@ -197,19 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				D69606951B29C2E500C9E8F6 /* CloudKit.framework */,
+				D60A08631B3224D4007B25E6 /* Menu */,
+				D60A08621B3224C0007B25E6 /* Images */,
+				D60A08541B322444007B25E6 /* Picker */,
 				8B30239C1B290C9800C21CFF /* main.m */,
-				8BABC76E1B3205E900367968 /* brick.jpg */,
-				8BABC7781B320D9100367968 /* Books.jpg */,
-				8BABC77A1B320DE100367968 /* books2.png */,
-				8BABC7701B32069300367968 /* tree.jpg */,
-				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
-				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
-				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
-				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
-				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
-				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
-				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
-				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
 				8B30238B1B290C4600C21CFF /* CollegeManager-Bridging-Header.h */,
 				8B3023681B290C2000C21CFF /* Info.plist */,
 			);
@@ -231,6 +234,54 @@
 				8B3023801B290C2000C21CFF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D60A08541B322444007B25E6 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D60A08611B32247E007B25E6 /* image */,
+				D60A08581B32247A007B25E6 /* DownPicker.h */,
+				D60A08591B32247A007B25E6 /* DownPicker.m */,
+				D60A085A1B32247A007B25E6 /* UIDownPicker.h */,
+				D60A085B1B32247A007B25E6 /* UIDownPicker.m */,
+			);
+			name = Picker;
+			sourceTree = "<group>";
+		};
+		D60A08611B32247E007B25E6 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				D60A08551B32247A007B25E6 /* downArrow.png */,
+				D60A08561B32247A007B25E6 /* downArrow@2x.png */,
+				D60A08571B32247A007B25E6 /* downArrow@3x.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		D60A08621B3224C0007B25E6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8BABC76E1B3205E900367968 /* brick.jpg */,
+				8BABC7781B320D9100367968 /* Books.jpg */,
+				8BABC77A1B320DE100367968 /* books2.png */,
+				8BABC7701B32069300367968 /* tree.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		D60A08631B3224D4007B25E6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
+				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
+				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
+				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
+				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
+				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
+				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
+				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		D69606881B291B6F00C9E8F6 /* Persistencia */ = {
@@ -341,12 +392,15 @@
 				8B1FEA2E1B29AA720016F6E1 /* Main.storyboard in Resources */,
 				8BABC7791B320D9100367968 /* Books.jpg in Resources */,
 				8B1FEA411B29ACED0016F6E1 /* MonthCollectionCell.xib in Resources */,
+				D60A085C1B32247A007B25E6 /* downArrow.png in Resources */,
 				8BABC76F1B3205E900367968 /* brick.jpg in Resources */,
 				8B1FEA451B29ACED0016F6E1 /* WeekHeaderView.xib in Resources */,
 				8BABC7711B32069300367968 /* tree.jpg in Resources */,
 				8B3023761B290C2000C21CFF /* LaunchScreen.xib in Resources */,
 				8BABC77B1B320DE100367968 /* books2.png in Resources */,
+				D60A085D1B32247A007B25E6 /* downArrow@2x.png in Resources */,
 				8B1FEA3F1B29ACED0016F6E1 /* CalendarView.xib in Resources */,
+				D60A085E1B32247A007B25E6 /* downArrow@3x.png in Resources */,
 				8B1FEA431B29ACED0016F6E1 /* DayCollectionCell.xib in Resources */,
 				8B3023731B290C2000C21CFF /* Images.xcassets in Resources */,
 			);
@@ -369,6 +423,7 @@
 				8B3023AA1B290C9800C21CFF /* HKSlideMenu3DController.m in Sources */,
 				D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */,
 				8B1FEA3E1B29ACED0016F6E1 /* CalendarView.swift in Sources */,
+				D60A08601B32247A007B25E6 /* UIDownPicker.m in Sources */,
 				8B3023A91B290C9800C21CFF /* HKMenuView.m in Sources */,
 				8B1FEA421B29ACED0016F6E1 /* DayCollectionCell.swift in Sources */,
 				8B3023921B290C4700C21CFF /* DetailViewController.swift in Sources */,
@@ -385,6 +440,7 @@
 				8BABC77D1B3212E700367968 /* CadastroDisciplinaViewController.swift in Sources */,
 				8B3023A81B290C9800C21CFF /* HKRotationNavigationController.m in Sources */,
 				8B1B38791B290FCE003381E5 /* CollegeManager.xcdatamodeld in Sources */,
+				D60A085F1B32247A007B25E6 /* DownPicker.m in Sources */,
 				8B1FEA471B29ACED0016F6E1 /* Date.swift in Sources */,
 				8B3023931B290C4700C21CFF /* DetailViewController2.swift in Sources */,
 				8B3023A61B290C9800C21CFF /* main.m in Sources */,
