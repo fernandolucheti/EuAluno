@@ -24,11 +24,37 @@ class CadastroViewController: UIViewController{
     }
     
     @IBAction func CancelButton(sender: UIButton) {
+
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func SaveButton(sender: UIButton) {
         // implement save
+        //implement save methods
+        
+        let disciplinaManager = DisciplinaManager.sharedInstance
+        let avaliacaoManager = AvaliacaoManager.sharedInstance
+        
+        //Nova disciplina
+        var newDisciplina = disciplinaManager.novaDisciplina()
+        newDisciplina.nome = disciplinaTextField.text!
+        
+        var avaliacao = avaliacaoManager.novaAvaliacao()
+        avaliacao.nome = nameTextField.text!
+        avaliacao.nota = 6                                      // Falta adicionar
+        avaliacaoManager.salvar()
+        
+        newDisciplina.addAvaliacao(avaliacao)
+        
+        // Teste pra exibir --------
+        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
+        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
+        println("\(ss) - \(rr)")
+        // --------------
+        
+        //Alert with some message
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
