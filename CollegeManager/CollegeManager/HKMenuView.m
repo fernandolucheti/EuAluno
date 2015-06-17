@@ -8,15 +8,21 @@
 
 #import "HKMenuView.h"
 #import "HKAppDelegate.h"
+#import "CollegeManager-Swift.h"
+
+
+
 
 @interface HKMenuView (){
+    
     NSArray *images;
     NSArray *titles;
 }
-
 @end
 
 @implementation HKMenuView
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -82,7 +88,17 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         [self showViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"navCadastro"] sender:nil];
     }else{
-        [[HKAppDelegate mainDelegate] setFirstView];
+        if (indexPath.row == 3) {
+//            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            UIViewController *vc = [[CalendarViewController alloc] init];
+//            vc.view.backgroundColor = [UIColor clearColor];
+//            [self addChildViewController:vc];
+            vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//            [self showViewController:vc sender:nil];
+            [self presentViewController:vc animated:YES completion:nil];
+        }else{
+            [[HKAppDelegate mainDelegate] setFirstView];
+        }
     }
 }
 
