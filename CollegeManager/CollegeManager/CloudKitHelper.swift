@@ -20,21 +20,21 @@ class CloudKitHelper {
     var publicDB : CKDatabase
     let privateDB : CKDatabase
     var delegate : CloudKitDelegate?
-    var todos = [Todos]()
+//    var todos = [Todos]()
     var avaliacoes = [AvaliacaoObj]()
     
-    class Todos {
-        
-        var name: String?
-        var text: String?
-        
-        convenience init(record: CKRecord, database: CKDatabase) {
-            self.init()
-            
-            name = record.recordID.recordName
-            text = record.objectForKey("todotext") as? String
-        }
-    }
+//    class Todos {
+//        
+//        var name: String?
+//        var text: String?
+//        
+//        convenience init(record: CKRecord, database: CKDatabase) {
+//            self.init()
+//            
+//            name = record.recordID.recordName
+//            text = record.objectForKey("todotext") as? String
+//        }
+//    }
     
     static let sharedInstance = CloudKitHelper()
     
@@ -44,16 +44,16 @@ class CloudKitHelper {
         privateDB = container.privateCloudDatabase
     }
     
-    func saveTodo(todo : NSString) {
-        
-        let todoRecord = CKRecord(recordType: "Todos")
-        todoRecord.setValue(todo, forKey: "todotext")
-        publicDB.saveRecord(todoRecord, completionHandler: { (record, error) -> Void in
-            println("Before saving in cloud kit : \(self.todos.count)")
-            println("Saved in cloudkit")
-//            self.fetchTodos(record)
-        })
-    }
+//    func saveTodo(todo : NSString) {
+//        
+//        let todoRecord = CKRecord(recordType: "Todos")
+//        todoRecord.setValue(todo, forKey: "todotext")
+//        publicDB.saveRecord(todoRecord, completionHandler: { (record, error) -> Void in
+//            println("Before saving in cloud kit : \(self.todos.count)")
+//            println("Saved in cloudkit")
+////            self.fetchTodos(record)
+//        })
+//    }
     
     func saveAvaliacao(avaliacao : Avaliacao) {
         
@@ -61,6 +61,10 @@ class CloudKitHelper {
         
         avaliRecord.setValue(avaliacao.nome, forKey: "nome")
         avaliRecord.setValue(avaliacao.nota, forKey: "nota")
+        avaliRecord.setValue(avaliacao.dataFinal, forKey: "dataFinal")
+        avaliRecord.setValue(avaliacao.dataEntrega, forKey: "dataEntrega")
+        avaliRecord.setValue(avaliacao.completo, forKey: "completo")
+        avaliRecord.setValue(avaliacao.tipo, forKey: "tipo")
         
         publicDB.saveRecord(avaliRecord, completionHandler: { (record, error) -> Void in
             println("Saved in cloudkit")

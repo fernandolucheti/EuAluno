@@ -14,6 +14,7 @@ class CadastroViewController: UIViewController{
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var disciplinaTextField: UITextField!
+    
     override func viewDidLoad() {
 //        super.viewDidLoad()
 //        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -43,7 +44,8 @@ class CadastroViewController: UIViewController{
         
         var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = nameTextField.text!
-        avaliacao.nota = 6                                      // Falta adicionar
+        avaliacao.dataFinal = datePicker.date
+//        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
         
         newDisciplina.addAvaliacao(avaliacao)

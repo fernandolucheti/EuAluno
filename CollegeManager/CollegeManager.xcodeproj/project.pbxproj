@@ -182,8 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */,
-				D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */,
-				D69606881B291B6F00C9E8F6 /* CoreData */,
+				D69606881B291B6F00C9E8F6 /* Persistencia */,
 				8B1FEA311B29ACA80016F6E1 /* ViewControllers */,
 				8B1B38771B290FCE003381E5 /* CollegeManager.xcdatamodeld */,
 				8B3023721B290C2000C21CFF /* Images.xcassets */,
@@ -234,14 +233,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D69606881B291B6F00C9E8F6 /* CoreData */ = {
+		D69606881B291B6F00C9E8F6 /* Persistencia */ = {
 			isa = PBXGroup;
 			children = (
+				D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */,
 				8B3023961B290C6900C21CFF /* AvaliacaoManager.swift */,
 				D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */,
 				D69606891B291B8100C9E8F6 /* Entidades */,
 			);
-			name = CoreData;
+			name = Persistencia;
 			sourceTree = "<group>";
 		};
 		D69606891B291B8100C9E8F6 /* Entidades */ = {
