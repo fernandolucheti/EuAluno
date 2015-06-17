@@ -37,8 +37,8 @@ class MasterViewController: UITableViewController {
         println("\(ss) - \(rr)")
         
         
-        let ckh = CloudKitHelper()
-        ckh.saveTodo("blá blá 22")
+//        let ckh = CloudKitHelper()
+//        ckh.saveTodo("blá blá 22")
         
         
         
