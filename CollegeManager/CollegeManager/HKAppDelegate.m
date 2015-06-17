@@ -33,6 +33,8 @@
     splitViewController.presentsWithGesture = NO;
     splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryOverlay;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    
+    splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryHidden;
 
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     

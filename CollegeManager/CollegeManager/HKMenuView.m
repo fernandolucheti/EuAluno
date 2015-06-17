@@ -86,10 +86,11 @@
     if (indexPath.row == 0) {
 
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"b"];
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CadastroDisciplina"];
 //        UIViewController *vc = [[CadastroViewController alloc] init];
         vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         [self presentViewController:vc animated:YES completion:nil];
+        [[HKAppDelegate mainDelegate] setFirstView];
 //        [self showViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"CadastroView"] sender:self];
     }else{
         if (indexPath.row == 3) {
@@ -100,7 +101,13 @@
             vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
 //            [self showViewController:vc sender:nil];
             [self presentViewController:vc animated:YES completion:nil];
+            [[HKAppDelegate mainDelegate] setFirstView];
         }else{
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CadastroAvaliacao"];
+            //        UIViewController *vc = [[CadastroViewController alloc] init];
+            vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            [self presentViewController:vc animated:YES completion:nil];
             [[HKAppDelegate mainDelegate] setFirstView];
         }
     }

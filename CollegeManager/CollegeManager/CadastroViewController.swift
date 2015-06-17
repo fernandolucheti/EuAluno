@@ -11,6 +11,7 @@ import UIKit
 
 class CadastroViewController: UIViewController{
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var disciplinaTextField: UITextField!
     override func viewDidLoad() {

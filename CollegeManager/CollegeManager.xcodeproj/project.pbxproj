@@ -39,6 +39,7 @@
 		8BABC7711B32069300367968 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7701B32069300367968 /* tree.jpg */; };
 		8BABC7791B320D9100367968 /* Books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7781B320D9100367968 /* Books.jpg */; };
 		8BABC77B1B320DE100367968 /* books2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC77A1B320DE100367968 /* books2.png */; };
+		8BABC77D1B3212E700367968 /* CadastroDisciplinaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */; };
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
 		D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606901B292F9200C9E8F6 /* Avaliacao.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
@@ -98,6 +99,7 @@
 		8BABC7701B32069300367968 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tree.jpg; path = ../tree.jpg; sourceTree = "<group>"; };
 		8BABC7781B320D9100367968 /* Books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Books.jpg; sourceTree = "<group>"; };
 		8BABC77A1B320DE100367968 /* books2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = books2.png; sourceTree = "<group>"; };
+		8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroDisciplinaViewController.swift; sourceTree = "<group>"; };
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
 		D69606901B292F9200C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				8B1FEA321B29ACD70016F6E1 /* Calendar */,
 				8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */,
+				8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */,
 				8B30238C1B290C4700C21CFF /* MasterViewController.swift */,
 				8B30238E1B290C4700C21CFF /* DetailViewController.swift */,
 				8B30238F1B290C4700C21CFF /* DetailViewController2.swift */,
@@ -379,6 +382,7 @@
 				8B1FEA481B29ACED0016F6E1 /* NSDateAdditions.swift in Sources */,
 				8B3023911B290C4700C21CFF /* TableViewController2.swift in Sources */,
 				8B1FEA441B29ACED0016F6E1 /* WeekHeaderView.swift in Sources */,
+				8BABC77D1B3212E700367968 /* CadastroDisciplinaViewController.swift in Sources */,
 				8B3023A81B290C9800C21CFF /* HKRotationNavigationController.m in Sources */,
 				8B1B38791B290FCE003381E5 /* CollegeManager.xcdatamodeld in Sources */,
 				8B1FEA471B29ACED0016F6E1 /* Date.swift in Sources */,

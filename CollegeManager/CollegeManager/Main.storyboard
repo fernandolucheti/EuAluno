@@ -271,10 +271,108 @@
             </objects>
             <point key="canvasLocation" x="-1512" y="-533"/>
         </scene>
+        <!--Cadastro Disciplina View Controller-->
+        <scene sceneID="RKL-JT-b5U">
+            <objects>
+                <viewController storyboardIdentifier="CadastroDisciplina" id="7GC-fI-uwt" customClass="CadastroDisciplinaViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="67y-st-DUs"/>
+                        <viewControllerLayoutGuide type="bottom" id="eRo-IG-Qfa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2JS-pO-DEB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CadastroModule" translatesAutoresizingMaskIntoConstraints="NO" id="8iE-6U-e5G" propertyAccessControl="none">
+                                <rect key="frame" x="115" y="230" width="370" height="140"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLb-aa-4fc">
+                                        <rect key="frame" x="98" y="33" width="174" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="174" id="605-4H-SPA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Disciplina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj8-HH-fO1">
+                                        <rect key="frame" x="111" y="10" width="149" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntw-qc-3Ew">
+                                        <rect key="frame" x="229" y="87" width="43" height="30"/>
+                                        <state key="normal" title="Salvar">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SaveButton:" destination="7GC-fI-uwt" eventType="touchUpInside" id="Gyt-qI-wUC"/>
+                                            <action selector="SaveButton:" destination="8Ex-mr-msc" eventType="touchUpInside" id="ZDT-om-chz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-K9-MnA">
+                                        <rect key="frame" x="98" y="87" width="61" height="30"/>
+                                        <state key="normal" title="Cancelar">
+                                            <color key="titleColor" red="1" green="0.15181912929999999" blue="0.28122361400000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CancelButton:" destination="8Ex-mr-msc" eventType="touchUpInside" id="jfx-wO-CRb"/>
+                                            <action selector="CancelButton:" destination="7GC-fI-uwt" eventType="touchUpInside" id="kOz-To-kUU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9496725063" green="0.9496725063" blue="0.9496725063" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ybU-K9-MnA" firstAttribute="top" secondItem="SLb-aa-4fc" secondAttribute="bottom" constant="24" id="4k3-H8-ERY"/>
+                                    <constraint firstAttribute="height" constant="140" id="6km-1M-jmy"/>
+                                    <constraint firstAttribute="width" constant="370" id="8sF-uK-Dt0"/>
+                                    <constraint firstItem="SLb-aa-4fc" firstAttribute="leading" secondItem="ybU-K9-MnA" secondAttribute="trailing" constant="-61" id="GO6-x5-Y5F"/>
+                                    <constraint firstItem="ybU-K9-MnA" firstAttribute="top" secondItem="SLb-aa-4fc" secondAttribute="bottom" constant="8" id="K1Z-JP-nbC"/>
+                                    <constraint firstItem="SLb-aa-4fc" firstAttribute="top" secondItem="Pj8-HH-fO1" secondAttribute="bottom" constant="2" id="Tsh-z4-kQs"/>
+                                    <constraint firstAttribute="centerX" secondItem="SLb-aa-4fc" secondAttribute="centerX" id="Xch-Bx-zmq"/>
+                                    <constraint firstAttribute="centerX" secondItem="Pj8-HH-fO1" secondAttribute="centerX" id="Ylj-aL-7l7"/>
+                                    <constraint firstItem="Ntw-qc-3Ew" firstAttribute="top" secondItem="SLb-aa-4fc" secondAttribute="bottom" constant="24" id="ZFb-5r-13I"/>
+                                    <constraint firstItem="Ntw-qc-3Ew" firstAttribute="top" secondItem="SLb-aa-4fc" secondAttribute="bottom" constant="8" id="Zxh-a6-woP"/>
+                                    <constraint firstAttribute="centerX" secondItem="ybU-K9-MnA" secondAttribute="centerX" constant="91.5" id="aXm-l6-Hsu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ntw-qc-3Ew" secondAttribute="trailing" constant="98" id="cve-U8-Ncc"/>
+                                    <constraint firstItem="Pj8-HH-fO1" firstAttribute="top" secondItem="8iE-6U-e5G" secondAttribute="top" constant="10" id="eIs-zZ-nFj"/>
+                                    <constraint firstItem="ybU-K9-MnA" firstAttribute="leading" secondItem="8iE-6U-e5G" secondAttribute="leading" constant="98" id="gYG-N0-eOr"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GO6-x5-Y5F"/>
+                                        <exclude reference="K1Z-JP-nbC"/>
+                                        <exclude reference="aXm-l6-Hsu"/>
+                                        <exclude reference="Zxh-a6-woP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="115" y="168" width="371" height="370"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="215" width="371" height="370"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8iE-6U-e5G" secondAttribute="centerX" id="6si-ek-MhP"/>
+                            <constraint firstAttribute="centerY" secondItem="8iE-6U-e5G" secondAttribute="centerY" id="lF9-oy-wiT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="SLb-aa-4fc" id="3tR-9V-mOY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5w-jj-g4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1564" y="146"/>
+        </scene>
         <!--Cadastro View Controller-->
         <scene sceneID="tVr-l2-iEB">
             <objects>
-                <viewController restorationIdentifier="v" storyboardIdentifier="b" id="8Ex-mr-msc" customClass="CadastroViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="v" storyboardIdentifier="CadastroAvaliacao" id="8Ex-mr-msc" customClass="CadastroViewController" customModule="CollegeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CDt-Y0-dAG"/>
                         <viewControllerLayoutGuide type="bottom" id="S5v-66-Qdo"/>
@@ -390,42 +488,25 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="b8e-Rj-pDQ" secondAttribute="centerY" id="Inv-L1-yxY"/>
                             <constraint firstAttribute="centerX" secondItem="b8e-Rj-pDQ" secondAttribute="centerX" id="fI4-zy-a6S"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="WQY-al-QQe" id="udV-5L-X4z"/>
                         <outlet property="disciplinaTextField" destination="gnj-H7-0lg" id="HhE-yx-zd2"/>
                         <outlet property="nameTextField" destination="gPv-We-u8r" id="NvL-Oc-Sxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8S-HO-hnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2016" y="284"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="NjE-hl-cBC">
-            <objects>
-                <viewController id="Mr4-1s-Nsk" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E2i-gg-dXn"/>
-                        <viewControllerLayoutGuide type="bottom" id="27M-uj-z5E"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DzM-XB-zOq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6rC-DG-TbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1341" y="261"/>
+            <point key="canvasLocation" x="-2426" y="198"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Tll-UG-LXB"/>
         <segue reference="aMD-Sm-AXY"/>
-        <segue reference="ExQ-MK-aJu"/>
     </inferredMetricsTieBreakers>
 </document>

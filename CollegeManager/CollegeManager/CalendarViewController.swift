@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController, CalendarViewDelegate {
 
         var backView = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width*10, height: self.view.bounds.height*10))
         backView.backgroundColor = UIColor.blackColor()
-        backView.alpha = 0.9
+        backView.alpha = 0.65
         backView.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
         placeholderView = UIView(frame: CGRect(x: self.view.bounds.width / 8, y: self.view.bounds.height / 4, width: 315, height: 315))
         placeholderView.center = self.view.center
