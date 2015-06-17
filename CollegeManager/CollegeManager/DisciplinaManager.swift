@@ -40,7 +40,7 @@ public class DisciplinaManager {
     
     func buscarDisciplinas() -> Array<Disciplina>
     {
-        let fetchRequest = NSFetchRequest(entityName: AvaliacaoManager.entityName)
+        let fetchRequest = NSFetchRequest(entityName: DisciplinaManager.entityName)
         var error:NSError?
         
         let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
