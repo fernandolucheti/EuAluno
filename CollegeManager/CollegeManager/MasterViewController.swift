@@ -40,15 +40,13 @@ class MasterViewController: UITableViewController {
 //        let ckh = CloudKitHelper()
 //        ckh.saveTodo("blá blá 22")
         
-        
-        
-        
         //-------------------------------------------
         
         
         
         
     }
+    
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

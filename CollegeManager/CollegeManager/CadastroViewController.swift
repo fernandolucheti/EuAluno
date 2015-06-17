@@ -28,8 +28,8 @@ class CadastroViewController: UIViewController{
         // self.navigationBar.backItem?.title = "voltar"
         
         
-        var disciplinaManager = DisciplinaManager()
-        var disciplinaArray = disciplinaManager.buscarDisciplinas()
+        let disciplinaManager = DisciplinaManager()
+        let disciplinaArray = disciplinaManager.buscarDisciplinas()
         var disciplinas = NSMutableArray()
         for d in disciplinaArray {
             disciplinas.addObject(d.nome)

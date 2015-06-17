@@ -9,28 +9,40 @@
 import UIKit
 
 class TableViewController2: UITableViewController {
+    
+    let disciplinaManager = DisciplinaManager()
+    var disciplinaArray: Array<Disciplina>!
 
     // MARK: - Table view data source
+    
+    override func viewDidLoad() {
+        disciplinaArray = disciplinaManager.buscarDisciplinas()
+    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return disciplinaArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
+        
         // Set appropriate labels for the cells.
-        if indexPath.row == 0 {
-            cell.textLabel?.text = "Cálculo 2"
-        }
-        else {
-            cell.textLabel?.text = "Engenharia de software 2"
-        }
+        
+        cell.textLabel?.text = disciplinaArray[indexPath.item].nome
+        
+        
+        
+//        if indexPath.row == 0 {
+//            cell.textLabel?.text = "Cálculo 2"
+//        }
+//        else {
+//            cell.textLabel?.text = "Engenharia de software 2"
+//        }
 
         return cell
     }
