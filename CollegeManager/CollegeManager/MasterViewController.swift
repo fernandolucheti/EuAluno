@@ -15,26 +15,26 @@ class MasterViewController: UITableViewController {
         //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
         
-        ///------ Teste CoreData ---------- OK ------
-        let disciplinaManager = DisciplinaManager.sharedInstance
-        let avaliacaoManager = AvaliacaoManager.sharedInstance
-        
-        //Nova disciplina
-        var newDisciplina = disciplinaManager.novaDisciplina()
-        newDisciplina.nome = "LP"
-        
-        var avaliacao = avaliacaoManager.novaAvaliacao()
-        avaliacao.nome = "Pbla"
-        avaliacao.nota = 8
-        avaliacaoManager.salvar()
-        
-        
-        newDisciplina.addAvaliacao(avaliacao)
-        
-        
-        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
-        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
-        println("\(ss) - \(rr)")
+//        ///------ Teste CoreData ---------- OK ------
+//        let disciplinaManager = DisciplinaManager.sharedInstance
+//        let avaliacaoManager = AvaliacaoManager.sharedInstance
+//        
+//        //Nova disciplina
+//        var newDisciplina = disciplinaManager.novaDisciplina()
+//        newDisciplina.nome = "LP"
+//        
+//        var avaliacao = avaliacaoManager.novaAvaliacao()
+//        avaliacao.nome = "Pbla"
+//        avaliacao.nota = 8
+//        avaliacaoManager.salvar()
+//        
+//        
+//        newDisciplina.addAvaliacao(avaliacao)
+//        
+//        
+//        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
+//        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
+//        println("\(ss) - \(rr)")
         
         
 //        let ckh = CloudKitHelper()

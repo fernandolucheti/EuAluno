@@ -28,10 +28,14 @@ class CadastroViewController: UIViewController{
         // self.navigationBar.backItem?.title = "voltar"
         
         
+        var disciplinaManager = DisciplinaManager()
+        var disciplinaArray = disciplinaManager.buscarDisciplinas()
+        var disciplinas = NSMutableArray()
+        for d in disciplinaArray {
+            disciplinas.addObject(d.nome)
+        }
         
-        var ss = NSMutableArray(array: ["teste1", "teste2", "teste1"])
-        downPicker = DownPicker(textField: disciplinaTextField, withData: ss)   //Colocar array de Disciplinas
-
+        downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)   //Colocar array de Disciplinas
     }
     
     @IBAction func CancelButton(sender: UIButton) {
