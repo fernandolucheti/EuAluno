@@ -18,6 +18,8 @@ class CadastroViewController: UINavigationController{
     }
     @IBAction func didPressSaveButton(sender: UIBarButtonItem) {
         //implement save methods
+        
+        //Alert with some message
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func didPressBackButton(sender: UIBarButtonItem) {

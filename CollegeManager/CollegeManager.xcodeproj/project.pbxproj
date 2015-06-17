@@ -38,6 +38,8 @@
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
 		D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606901B292F9200C9E8F6 /* Avaliacao.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
+		D69606961B29C2E500C9E8F6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69606951B29C2E500C9E8F6 /* CloudKit.framework */; };
+		D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,9 @@
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
 		D69606901B292F9200C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
+		D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CollegeManager.entitlements; sourceTree = "<group>"; };
+		D69606951B29C2E500C9E8F6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69606961B29C2E500C9E8F6 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +170,8 @@
 		8B3023661B290C2000C21CFF /* CollegeManager */ = {
 			isa = PBXGroup;
 			children = (
+				D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */,
+				D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */,
 				D69606881B291B6F00C9E8F6 /* CoreData */,
 				8B1FEA311B29ACA80016F6E1 /* ViewControllers */,
 				8B1B38771B290FCE003381E5 /* CollegeManager.xcdatamodeld */,
@@ -178,6 +186,7 @@
 		8B3023671B290C2000C21CFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D69606951B29C2E500C9E8F6 /* CloudKit.framework */,
 				8B30239C1B290C9800C21CFF /* main.m */,
 				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
 				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
@@ -278,6 +287,12 @@
 				TargetAttributes = {
 					8B3023631B290C2000C21CFF = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 6VEL7G8EU2;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					8B30237A1B290C2000C21CFF = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -355,6 +370,7 @@
 				8B3023931B290C4700C21CFF /* DetailViewController2.swift in Sources */,
 				8B3023A61B290C9800C21CFF /* main.m in Sources */,
 				8B1FEA301B29AA7C0016F6E1 /* CadastroViewController.swift in Sources */,
+				D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */,
 				8B3023901B290C4700C21CFF /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,9 +493,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CollegeManager/CollegeManager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CollegeManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CollegeManager/CollegeManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -490,9 +510,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CollegeManager/CollegeManager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CollegeManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CollegeManager/CollegeManager-Bridging-Header.h";
 			};
 			name = Release;

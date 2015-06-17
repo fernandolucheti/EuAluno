@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CloudKit
 
 @objc(Disciplina)
 class Disciplina: NSManagedObject {
@@ -18,5 +19,7 @@ class Disciplina: NSManagedObject {
     func addAvaliacao(avaliacao: Avaliacao) {
         var avaliacoes = self.mutableSetValueForKey("avaliacoes")
         avaliacoes.addObject(avaliacao)
+        
+        //
     }
 }
