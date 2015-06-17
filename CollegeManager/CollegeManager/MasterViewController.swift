@@ -24,8 +24,8 @@ class MasterViewController: UITableViewController {
         newDisciplina.nome = "LP"
         
         var avaliacao = avaliacaoManager.novaAvaliacao()
-        avaliacao.nome = "P1"
-        avaliacao.nota = 6
+        avaliacao.nome = "P2"
+        avaliacao.nota = 8
         avaliacaoManager.salvar()
         
         

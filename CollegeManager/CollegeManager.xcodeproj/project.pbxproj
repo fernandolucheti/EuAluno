@@ -299,7 +299,6 @@
 				TargetAttributes = {
 					8B3023631B290C2000C21CFF = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 6VEL7G8EU2;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;
