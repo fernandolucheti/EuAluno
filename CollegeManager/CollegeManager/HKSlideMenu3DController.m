@@ -45,6 +45,8 @@
     
     _bgImageContainer = [[UIImageView alloc] initWithFrame:self.view.bounds];
     _bgImageContainer.contentMode = UIViewContentModeScaleAspectFill;// UIViewContentModeTopLeft;
+    _bgImageContainer.backgroundColor = [UIColor whiteColor];
+    _bgImageContainer.alpha = 0.4;
     _bgImageContainer.layer.zPosition = -2000;
     [self.view addSubview:_bgImageContainer];
     

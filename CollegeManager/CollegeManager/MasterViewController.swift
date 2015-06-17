@@ -123,12 +123,13 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        
+//        cell.textLabel?.textColor = UIColor.redColor()
         
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator
         }else{
+            
             // Set appropriate labels for the cells.
             if indexPath.row == 0 {
                 cell.textLabel?.text = "Prova APD3"

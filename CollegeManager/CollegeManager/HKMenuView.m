@@ -53,7 +53,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 75;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,11 +65,12 @@
     
     cell.textLabel.text = [titles objectAtIndex:indexPath.row];
     
-    UIFont *currentFont = cell.textLabel.font;
-    UIFont *correctFont = [UIFont fontWithName:currentFont.fontName size: 25];
+    
+    
+    UIFont *correctFont = [UIFont boldSystemFontOfSize: 27];
     cell.textLabel.font = correctFont;
     
-    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

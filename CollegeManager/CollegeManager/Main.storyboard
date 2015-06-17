@@ -49,7 +49,14 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Disciplina" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" title="Voltar" id="kGU-kt-Sr0">
+                            <color key="tintColor" red="1" green="0.037066020669999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didPressedBackButton:" destination="JEX-9P-axG" id="yp7-WI-9Dq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                     </connections>
@@ -86,7 +93,14 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="fuW-3p-4Uj"/>
+                    <navigationItem key="navigationItem" title="Detail2" id="fuW-3p-4Uj">
+                        <barButtonItem key="rightBarButtonItem" title="Voltar" id="jna-N7-PSv">
+                            <color key="tintColor" red="1" green="0.037066020669999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didPressedBackButton:" destination="FmA-Le-X6S" id="MoJ-cI-rBs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="h6D-l2-ZDw" id="66t-iO-KYA"/>
                     </connections>
@@ -207,6 +221,9 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="HTU-z6-sY9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="wCZ-pz-VBh"/>
                     </connections>

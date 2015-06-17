@@ -50,16 +50,20 @@
     
     menuVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"HKMenuView"];
     menuVC.view.backgroundColor = [UIColor clearColor];
-    navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"split"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"split"];
+    }else{
+        navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"navMain"];
+    }
     
     self.slideMenuVC.menuViewController = menuVC;
     
     self.slideMenuVC.mainViewController = navMain;
-    
-    self.slideMenuVC.backgroundImage = [UIImage imageNamed:@"books2.png"];
+    UIImage *img = [UIImage imageNamed:@"books2.png"];
+    self.slideMenuVC.backgroundImage = img;
 
 
-    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeRedraw;
+    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeBottomLeft;
     self.slideMenuVC.enablePan = YES;
     
     //Set delegate methods in currect controller or another class, for example Menu
