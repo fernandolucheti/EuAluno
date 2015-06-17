@@ -69,7 +69,7 @@
     UIFont *correctFont = [UIFont fontWithName:currentFont.fontName size: 25];
     cell.textLabel.font = correctFont;
     
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor blackColor];
     cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -86,7 +86,11 @@
     if (indexPath.row == 0) {
 
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        [self showViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"navCadastro"] sender:nil];
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"b"];
+//        UIViewController *vc = [[CadastroViewController alloc] init];
+        vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        [self presentViewController:vc animated:YES completion:nil];
+//        [self showViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"CadastroView"] sender:self];
     }else{
         if (indexPath.row == 3) {
 //            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];

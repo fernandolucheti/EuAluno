@@ -54,8 +54,10 @@
     
     self.slideMenuVC.mainViewController = navMain;
     
-    self.slideMenuVC.backgroundImage = [UIImage imageNamed:@"cloud"];
-    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeTopLeft;
+    self.slideMenuVC.backgroundImage = [UIImage imageNamed:@"books2.png"];
+
+
+    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeRedraw;
     self.slideMenuVC.enablePan = YES;
     
     //Set delegate methods in currect controller or another class, for example Menu

@@ -35,6 +35,10 @@
 		8B3023A81B290C9800C21CFF /* HKRotationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */; };
 		8B3023A91B290C9800C21CFF /* HKMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023A21B290C9800C21CFF /* HKMenuView.m */; };
 		8B3023AA1B290C9800C21CFF /* HKSlideMenu3DController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */; };
+		8BABC76F1B3205E900367968 /* brick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC76E1B3205E900367968 /* brick.jpg */; };
+		8BABC7711B32069300367968 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7701B32069300367968 /* tree.jpg */; };
+		8BABC7791B320D9100367968 /* Books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7781B320D9100367968 /* Books.jpg */; };
+		8BABC77B1B320DE100367968 /* books2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC77A1B320DE100367968 /* books2.png */; };
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
 		D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606901B292F9200C9E8F6 /* Avaliacao.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
@@ -90,6 +94,10 @@
 		8B3023A21B290C9800C21CFF /* HKMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKMenuView.m; sourceTree = "<group>"; };
 		8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKSlideMenu3DController.h; sourceTree = "<group>"; };
 		8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKSlideMenu3DController.m; sourceTree = "<group>"; };
+		8BABC76E1B3205E900367968 /* brick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brick.jpg; sourceTree = "<group>"; };
+		8BABC7701B32069300367968 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tree.jpg; path = ../tree.jpg; sourceTree = "<group>"; };
+		8BABC7781B320D9100367968 /* Books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Books.jpg; sourceTree = "<group>"; };
+		8BABC77A1B320DE100367968 /* books2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = books2.png; sourceTree = "<group>"; };
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
 		D69606901B292F9200C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
@@ -188,6 +196,10 @@
 			children = (
 				D69606951B29C2E500C9E8F6 /* CloudKit.framework */,
 				8B30239C1B290C9800C21CFF /* main.m */,
+				8BABC76E1B3205E900367968 /* brick.jpg */,
+				8BABC7781B320D9100367968 /* Books.jpg */,
+				8BABC77A1B320DE100367968 /* books2.png */,
+				8BABC7701B32069300367968 /* tree.jpg */,
 				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
 				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
 				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
@@ -325,9 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1FEA2E1B29AA720016F6E1 /* Main.storyboard in Resources */,
+				8BABC7791B320D9100367968 /* Books.jpg in Resources */,
 				8B1FEA411B29ACED0016F6E1 /* MonthCollectionCell.xib in Resources */,
+				8BABC76F1B3205E900367968 /* brick.jpg in Resources */,
 				8B1FEA451B29ACED0016F6E1 /* WeekHeaderView.xib in Resources */,
+				8BABC7711B32069300367968 /* tree.jpg in Resources */,
 				8B3023761B290C2000C21CFF /* LaunchScreen.xib in Resources */,
+				8BABC77B1B320DE100367968 /* books2.png in Resources */,
 				8B1FEA3F1B29ACED0016F6E1 /* CalendarView.xib in Resources */,
 				8B1FEA431B29ACED0016F6E1 /* DayCollectionCell.xib in Resources */,
 				8B3023731B290C2000C21CFF /* Images.xcassets in Resources */,

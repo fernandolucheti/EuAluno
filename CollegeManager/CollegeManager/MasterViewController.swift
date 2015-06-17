@@ -103,7 +103,7 @@ class MasterViewController: UITableViewController {
             view.backgroundColor = UIColor.grayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: view.bounds.height/2, width: self.view.bounds.width, height: 40))
             label.center = view.center
-            label.text = "Eu Aluno"
+            label.text = "College Manager"
             label.textAlignment = NSTextAlignment.Center
             label.textColor = UIColor.whiteColor()
             view.addSubview(label)

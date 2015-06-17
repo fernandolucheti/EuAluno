@@ -9,20 +9,27 @@
 import Foundation
 import UIKit
 
-class CadastroViewController: UINavigationController{
+class CadastroViewController: UIViewController{
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var disciplinaTextField: UITextField!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.navigationBar.backItem?.title = "voltar"
-    }
-    @IBAction func didPressSaveButton(sender: UIBarButtonItem) {
-        //implement save methods
+//        super.viewDidLoad()
+//        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+//        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"b"];
         
-        //Alert with some message
+
+        //self.view.backgroundColor = UIColor.whiteColor()
+       // self.navigationBar.backItem?.title = "voltar"
+    }
+    
+    @IBAction func CancelButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func didPressBackButton(sender: UIBarButtonItem) {
+    
+    @IBAction func SaveButton(sender: UIButton) {
+        // implement save
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }
