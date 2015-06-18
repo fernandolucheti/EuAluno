@@ -134,27 +134,21 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-//        cell.textLabel?.textColor = UIColor.redColor()
         
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator
         }else{
             
-            // Set appropriate labels for the cells.
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "Prova APD3"
-            }
-            else if indexPath.row == 1 {
-                cell.textLabel?.text = "Lista de Cálculo"
-            }
-            else {
-                cell.textLabel?.text = "Projeto Mobile"
-                
-            }
+            var nome = avaliacaoArray[indexPath.item].nome
+            // var dataF = String(avaliacaoArray[indexPath.item].dataFinal)     //Para exibir a data
+
+            cell.textLabel?.text = nome //+ dataF
+            
         }
         return cell
     }
+
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0{
