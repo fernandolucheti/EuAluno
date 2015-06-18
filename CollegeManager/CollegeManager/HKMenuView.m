@@ -97,6 +97,7 @@
         if (indexPath.row == 3) {
 //            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             UIViewController *vc = [[CalendarViewController alloc] init];
+            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 //            vc.view.backgroundColor = [UIColor clearColor];
 //            [self addChildViewController:vc];
             vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
@@ -107,6 +108,7 @@
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"CadastroAvaliacao"];
             //        UIViewController *vc = [[CadastroViewController alloc] init];
+            
             vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
             [self presentViewController:vc animated:YES completion:nil];
             [[HKAppDelegate mainDelegate] setFirstView];

@@ -38,6 +38,13 @@ class CadastroViewController: UIViewController{
         downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)   //Colocar array de Disciplinas
     }
     
+    @IBAction func addDisciplinaButtonPressed(sender: UIButton) {
+        var mainStoryboard = self.storyboard
+        var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("CadastroDisciplina") as! UIViewController
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
     @IBAction func CancelButton(sender: UIButton) {
 
         

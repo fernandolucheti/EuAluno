@@ -44,7 +44,13 @@ class MasterViewController: UITableViewController {
         
         
         
-        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: Selector("openMenu"))
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.darkGrayColor()
+    }
+    
+    func openMenu(){
+
+        HKAppDelegate.mainDelegate().slideMenuVC.toggleMenu()
     }
     
     // MARK: - Segues
@@ -98,7 +104,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
-            view.backgroundColor = UIColor.grayColor()
+            view.backgroundColor = UIColor.lightGrayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: view.bounds.height/2, width: self.view.bounds.width, height: 40))
             label.center = view.center
             label.text = "College Manager"
@@ -108,7 +114,7 @@ class MasterViewController: UITableViewController {
             return view
         }else{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 50))
-            view.backgroundColor = UIColor.grayColor()
+            view.backgroundColor = UIColor.lightGrayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: 5, width: self.view.bounds.width, height: 40))
             label.center.x = view.center.x
             label.text = "Próximos eventos"
