@@ -80,7 +80,7 @@ class CloudKitHelper {
         
         publicDB.saveRecord(disRecord, completionHandler: { (record, error) -> Void in
             println("Saved in cloudkit")
-            self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
+//            self.disciplinas = self.fetchDisciplina(record, queryString: "")
         })
     }
     
