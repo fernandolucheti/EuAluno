@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6122B0521B32B365003ED99E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122B0511B32B365003ED99E /* NotificationController.swift */; };
 		8B0880C81B32A43700F0C449 /* college icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B0880C71B32A43700F0C449 /* college icon.jpg */; };
 		8B0880CA1B32A48200F0C449 /* CollegeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0880C91B32A48200F0C449 /* CollegeIcon.png */; };
 		8B0880CC1B32A57600F0C449 /* cloud3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B0880CB1B32A57600F0C449 /* cloud3.jpg */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6122B0511B32B365003ED99E /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		8B0880C71B32A43700F0C449 /* college icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "college icon.jpg"; sourceTree = "<group>"; };
 		8B0880C91B32A48200F0C449 /* CollegeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CollegeIcon.png; sourceTree = "<group>"; };
 		8B0880CB1B32A57600F0C449 /* cloud3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud3.jpg; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6122B0531B32B36C003ED99E /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				6122B0511B32B365003ED99E /* NotificationController.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		8B1FEA311B29ACA80016F6E1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */,
+				6122B0531B32B36C003ED99E /* Notifications */,
 				D69606881B291B6F00C9E8F6 /* Persistencia */,
 				8B1FEA311B29ACA80016F6E1 /* ViewControllers */,
 				8B1B38771B290FCE003381E5 /* CollegeManager.xcdatamodeld */,
@@ -504,6 +515,8 @@
 				8B3023971B290C6900C21CFF /* AvaliacaoManager.swift in Sources */,
 				D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */,
 				8B1FEA401B29ACED0016F6E1 /* MonthCollectionCell.swift in Sources */,
+				6122B0521B32B365003ED99E /* NotificationController.swift in Sources */,
+				D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */,
 				8B1FEA481B29ACED0016F6E1 /* NSDateAdditions.swift in Sources */,
 				8B3023911B290C4700C21CFF /* TableViewController2.swift in Sources */,
 				8B1FEA441B29ACED0016F6E1 /* WeekHeaderView.swift in Sources */,
