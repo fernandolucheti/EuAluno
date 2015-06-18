@@ -34,7 +34,7 @@ class AvaliacaoObj {
     var nome: String?
     var nota: NSNumber?
     var tipo: NSNumber?
-//    var disciplina: Disciplina?   
+    var disciplina: Disciplina?
     
     convenience init(record: CKRecord, database: CKDatabase){
         self.init()
@@ -47,7 +47,7 @@ class AvaliacaoObj {
         nome = record.objectForKey("nome") as? String
         nota = record.objectForKey("nota") as? NSNumber
         tipo = record.objectForKey("tipo") as? NSNumber
-//        disciplina = record.objectForKey("disciplina") as 
+        disciplina = record.objectForKey("disciplina") as? Disciplina
     }
     
 }

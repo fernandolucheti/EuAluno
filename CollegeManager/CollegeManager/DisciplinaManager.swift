@@ -62,27 +62,27 @@ public class DisciplinaManager {
         return Array<Disciplina>()
     }
     
-//    func buscarIdDisciplina(nome: String) -> String{ //Pra fazer o relacionamento
-//            
-//        var id: String?
-//        
-//        let fetchRequest = NSFetchRequest(entityName: DisciplinaManager.entityName)
-//        
-//        // Create a new predicate that filters out any object before today.
-//        let predicate = NSPredicate(format: "nome == %@", nome)
-//        fetchRequest.predicate = predicate
-//        
-//        var error:NSError?
-//        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
-//        
-//        if let results = fetchedResults as? [Disciplina] {
-//            return results[0]
-//        } else {
-//            println("Could not fetch. Error: \(error), \(error!.userInfo)")
-//        }
-//        
-//        return avaliacoes
-//    }
+    func buscarDisciplina(nome: String) -> Disciplina{ //Pra fazer o relacionamento
+            
+        var id: String?
+        
+        let fetchRequest = NSFetchRequest(entityName: DisciplinaManager.entityName)
+        
+        // Create a new predicate that filters out any object before today.
+        let predicate = NSPredicate(format: "nome == %@", nome)
+        fetchRequest.predicate = predicate
+        
+        var error:NSError?
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults as? [Disciplina] {
+            return results[0]
+        } else {
+            println("Could not fetch. Error: \(error), \(error!.userInfo)")
+        }
+        
+        return Disciplina()
+    }
     
     func getAvaliacoes(nomeDis: String) -> Array<Avaliacao> {
         
