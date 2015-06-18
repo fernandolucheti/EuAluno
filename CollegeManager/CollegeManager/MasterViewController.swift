@@ -10,7 +10,6 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    
     let avaliacaoManager = AvaliacaoManager()
     var avaliacaoArray: Array<Avaliacao>!
 

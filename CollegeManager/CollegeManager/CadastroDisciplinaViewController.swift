@@ -36,7 +36,7 @@ class CadastroDisciplinaViewController: UIViewController{
         //Nova disciplina
         var newDisciplina = disciplinaManager.novaDisciplina()
         newDisciplina.nome = nameTextField.text!
-        
+        disciplinaManager.salvar()
         // --------------
         
         //Alert with some message

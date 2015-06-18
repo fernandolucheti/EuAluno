@@ -72,6 +72,18 @@ class CloudKitHelper {
         })
     }
     
+    func saveDisciplina(disciplina : Disciplina) {
+        
+        let disRecord = CKRecord(recordType: "Disciplina")
+        
+        disRecord.setValue(disciplina.nome, forKey: "nome")
+        
+        publicDB.saveRecord(disRecord, completionHandler: { (record, error) -> Void in
+            println("Saved in cloudkit")
+            self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
+        })
+    }
+    
     func fetchAvaliacao(insertedRecord: CKRecord?, queryString: String) -> [AvaliacaoObj] {
         
         var tempAval = [AvaliacaoObj]()
