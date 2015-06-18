@@ -33,7 +33,12 @@ class AvaliacoesCollectionViewController: UICollectionViewController {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! AvaliacaoCell
         if avaliacoes != nil{
             println()
-           cell.nameLabel.text = avaliacoes[indexPath.row].nome 
+           cell.nameLabel.text = avaliacoes[indexPath.row].nome
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy" //format style. Browse online to get a format that fits your needs.
+
+            cell.dataLabel.text =  dateFormatter.stringFromDate(avaliacoes[indexPath.row].dataEntrega)
         }
         
        // cell.layer.cornerRadius = 7

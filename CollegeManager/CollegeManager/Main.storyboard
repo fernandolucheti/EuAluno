@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -303,6 +304,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blur4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BTc-cE-R5h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CadastroModule" translatesAutoresizingMaskIntoConstraints="NO" id="8iE-6U-e5G" propertyAccessControl="none">
                                 <rect key="frame" x="115" y="230" width="370" height="140"/>
                                 <subviews>
@@ -378,8 +382,18 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="8iE-6U-e5G" secondAttribute="centerX" id="6si-ek-MhP"/>
+                            <constraint firstItem="eRo-IG-Qfa" firstAttribute="top" secondItem="BTc-cE-R5h" secondAttribute="bottom" id="RGB-Vp-xMX"/>
+                            <constraint firstItem="BTc-cE-R5h" firstAttribute="top" secondItem="2JS-pO-DEB" secondAttribute="topMargin" id="a2R-k5-l2T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BTc-cE-R5h" secondAttribute="trailing" constant="-16" id="aZl-UT-dxZ"/>
+                            <constraint firstItem="BTc-cE-R5h" firstAttribute="bottom" secondItem="8iE-6U-e5G" secondAttribute="bottomMargin" constant="-53" id="fZS-bU-J0P"/>
                             <constraint firstAttribute="centerY" secondItem="8iE-6U-e5G" secondAttribute="centerY" id="lF9-oy-wiT"/>
+                            <constraint firstItem="BTc-cE-R5h" firstAttribute="leading" secondItem="2JS-pO-DEB" secondAttribute="leadingMargin" constant="-16" id="z5P-YR-o7R"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fZS-bU-J0P"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="SLb-aa-4fc" id="3tR-9V-mOY"/>
@@ -401,7 +415,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blur4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BTc-cE-R5h">
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blur4.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Mtl-kV-ZXn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CadastroModule" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-Rj-pDQ" propertyAccessControl="none">
@@ -525,19 +539,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BTc-cE-R5h" firstAttribute="leading" secondItem="cU7-Li-21E" secondAttribute="leadingMargin" constant="-16" id="B1I-Xj-qX2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mtl-kV-ZXn" secondAttribute="trailing" constant="-16" id="2uL-MO-QS9"/>
+                            <constraint firstItem="S5v-66-Qdo" firstAttribute="top" secondItem="Mtl-kV-ZXn" secondAttribute="bottom" id="Ie0-0t-wpc"/>
                             <constraint firstAttribute="centerY" secondItem="b8e-Rj-pDQ" secondAttribute="centerY" id="Inv-L1-yxY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BTc-cE-R5h" secondAttribute="trailing" constant="-16" id="PIz-pD-Zaq"/>
-                            <constraint firstItem="BTc-cE-R5h" firstAttribute="top" secondItem="cU7-Li-21E" secondAttribute="topMargin" id="ais-uz-xem"/>
                             <constraint firstAttribute="centerX" secondItem="b8e-Rj-pDQ" secondAttribute="centerX" id="fI4-zy-a6S"/>
-                            <constraint firstItem="BTc-cE-R5h" firstAttribute="top" secondItem="CDt-Y0-dAG" secondAttribute="bottom" constant="-20" id="lRN-ln-yYs"/>
-                            <constraint firstItem="S5v-66-Qdo" firstAttribute="top" secondItem="BTc-cE-R5h" secondAttribute="bottom" id="oR5-nQ-6er"/>
+                            <constraint firstItem="Mtl-kV-ZXn" firstAttribute="top" secondItem="cU7-Li-21E" secondAttribute="topMargin" id="hyL-zy-yVT"/>
+                            <constraint firstItem="Mtl-kV-ZXn" firstAttribute="leading" secondItem="cU7-Li-21E" secondAttribute="leadingMargin" constant="-16" id="uT2-9f-g5C"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="lRN-ln-yYs"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="WQY-al-QQe" id="udV-5L-X4z"/>

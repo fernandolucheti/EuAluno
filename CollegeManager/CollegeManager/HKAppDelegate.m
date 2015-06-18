@@ -61,7 +61,7 @@
     self.slideMenuVC.menuViewController = menuVC;
     
     self.slideMenuVC.mainViewController = navMain;
-    UIImage *img = [UIImage imageNamed:@"cloud6.jpg"];
+    UIImage *img = [UIImage imageNamed:@"redblur.jpeg"];
     self.slideMenuVC.backgroundImage = img;
 
 
@@ -127,7 +127,7 @@
     
     if (!navMain) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"navMain"];
+        navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"split"];
     }
     
     self.slideMenuVC.mainViewController = navMain;

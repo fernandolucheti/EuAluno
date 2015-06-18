@@ -157,10 +157,13 @@ class MasterViewController: UITableViewController {
             return view
         }
     }
-
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.tableView.reloadData()
+        
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator

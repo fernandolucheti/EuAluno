@@ -38,6 +38,11 @@ class CadastroViewController: UIViewController{
         downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)   //Colocar array de Disciplinas
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        self.nameTextField.resignFirstResponder()
+    }
+    
     @IBAction func addDisciplinaButtonPressed(sender: UIButton) {
         
         var mainStoryboard = self.storyboard
@@ -46,6 +51,7 @@ class CadastroViewController: UIViewController{
         self.presentViewController(vc, animated: true, completion: nil)
         
     }
+    
     @IBAction func CancelButton(sender: UIButton) {
 
         

@@ -30,7 +30,7 @@ class TableViewController2: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
         // Set appropriate labels for the cells.
         
         cell.textLabel?.text = disciplinaArray[indexPath.item].nome
