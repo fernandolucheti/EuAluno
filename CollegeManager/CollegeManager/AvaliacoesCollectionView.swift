@@ -28,6 +28,12 @@ class AvaliacoesCollectionViewController: UICollectionViewController {
         }
         
     }
+    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        var mainStoryboard = self.storyboard
+        var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("AvaliacaoController") as! AvaliacaoViewController
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! AvaliacaoCell

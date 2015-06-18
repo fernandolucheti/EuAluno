@@ -43,6 +43,9 @@ class CadastroViewController: UIViewController{
         self.nameTextField.resignFirstResponder()
     }
     
+    @IBAction func backButton(sender: UIButton) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func addDisciplinaButtonPressed(sender: UIButton) {
         
         var mainStoryboard = self.storyboard
