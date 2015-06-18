@@ -51,26 +51,21 @@ class CadastroViewController: UIViewController{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    /// Implement save methods
     @IBAction func SaveButton(sender: UIButton) {
-        // implement save
-        //implement save methods
         
-        let disciplinaManager = DisciplinaManager.sharedInstance
         let avaliacaoManager = AvaliacaoManager.sharedInstance
-        
-        //Nova disciplina
-        var newDisciplina = disciplinaManager.novaDisciplina()
-        newDisciplina.nome = disciplinaTextField.text!
         
         var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = nameTextField.text!
         avaliacao.dataFinal = datePicker.date
         avaliacao.completo = 0
         avaliacao.tipo = 1
+        let disciplinaManager = DisciplinaManager()
+        avaliacao.disciplina = disciplinaManager.buscarDisciplina(disciplinaTextField.text)
 //        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
         
-        newDisciplina.addAvaliacao(avaliacao)
         
         // Teste pra exibir --------
         let ss = avaliacaoManager.buscarAvaliacoes()[0].nome

@@ -46,8 +46,18 @@ public class AvaliacaoManager {
     func buscarAvaliacoes() -> Array<Avaliacao>
     {
         let fetchRequest = NSFetchRequest(entityName: AvaliacaoManager.entityName)
-        var error:NSError?
         
+        // Create a sort descriptor object that sorts on the "dataFinal"
+        let sortDescriptor = NSSortDescriptor(key: "dataFinal", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        // Create a new predicate that filters out any object before today.
+        let predicate = NSPredicate(format: "dataFinal >= %@", NSDate())
+        
+        fetchRequest.predicate = predicate
+        
+        
+        var error:NSError?
         let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
         
         if let results = fetchedResults as? [Avaliacao] {

@@ -10,10 +10,14 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
+    let avaliacaoManager = AvaliacaoManager()
+    var avaliacaoArray: Array<Avaliacao>!
 
     override func viewDidLoad() {
         //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
+        
+        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
         
 //        ///------ Teste CoreData ---------- OK ------
 //        let disciplinaManager = DisciplinaManager.sharedInstance
@@ -41,6 +45,9 @@ class MasterViewController: UITableViewController {
 //        ckh.saveTodo("blá blá 22")
         
         //-------------------------------------------
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
         
         
@@ -79,7 +86,7 @@ class MasterViewController: UITableViewController {
         if section == 0{
             return 1
         }else{
-            return 3
+            return avaliacaoArray.count
         }
     }
     
@@ -146,8 +153,6 @@ class MasterViewController: UITableViewController {
                 
             }
         }
-        
-        
         return cell
     }
 

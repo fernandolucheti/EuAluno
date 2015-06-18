@@ -30,14 +30,13 @@ class CadastroDisciplinaViewController: UIViewController{
     
     @IBAction func SaveButton(sender: UIButton) {
         // implement save
-        //implement save methods
         
         let disciplinaManager = DisciplinaManager.sharedInstance
      
         //Nova disciplina
         var newDisciplina = disciplinaManager.novaDisciplina()
         newDisciplina.nome = nameTextField.text!
-        
+        disciplinaManager.salvar()
         // --------------
         
         //Alert with some message
