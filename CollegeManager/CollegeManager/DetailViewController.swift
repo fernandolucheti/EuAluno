@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
+
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
@@ -29,11 +30,14 @@ class DetailViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        //self.configureView()
     }
 
+    @IBAction func didPressedBackButton(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 

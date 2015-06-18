@@ -38,8 +38,8 @@
 		8BABC76F1B3205E900367968 /* brick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC76E1B3205E900367968 /* brick.jpg */; };
 		8BABC7711B32069300367968 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7701B32069300367968 /* tree.jpg */; };
 		8BABC7791B320D9100367968 /* Books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC7781B320D9100367968 /* Books.jpg */; };
-		8BABC77B1B320DE100367968 /* books2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BABC77A1B320DE100367968 /* books2.png */; };
 		8BABC77D1B3212E700367968 /* CadastroDisciplinaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */; };
+		8BABC7811B3251A300367968 /* AvaliacoesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABC7801B3251A300367968 /* AvaliacoesCollectionView.swift */; };
 		D60A085C1B32247A007B25E6 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08551B32247A007B25E6 /* downArrow.png */; };
 		D60A085D1B32247A007B25E6 /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08561B32247A007B25E6 /* downArrow@2x.png */; };
 		D60A085E1B32247A007B25E6 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08571B32247A007B25E6 /* downArrow@3x.png */; };
@@ -103,8 +103,8 @@
 		8BABC76E1B3205E900367968 /* brick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brick.jpg; sourceTree = "<group>"; };
 		8BABC7701B32069300367968 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tree.jpg; path = ../tree.jpg; sourceTree = "<group>"; };
 		8BABC7781B320D9100367968 /* Books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Books.jpg; sourceTree = "<group>"; };
-		8BABC77A1B320DE100367968 /* books2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = books2.png; sourceTree = "<group>"; };
 		8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroDisciplinaViewController.swift; sourceTree = "<group>"; };
+		8BABC7801B3251A300367968 /* AvaliacoesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvaliacoesCollectionView.swift; sourceTree = "<group>"; };
 		D60A08551B32247A007B25E6 /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
 		D60A08561B32247A007B25E6 /* downArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@2x.png"; sourceTree = "<group>"; };
 		D60A08571B32247A007B25E6 /* downArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@3x.png"; sourceTree = "<group>"; };
@@ -146,6 +146,7 @@
 				8B1FEA2F1B29AA7C0016F6E1 /* CadastroViewController.swift */,
 				8BABC77C1B3212E700367968 /* CadastroDisciplinaViewController.swift */,
 				8B30238C1B290C4700C21CFF /* MasterViewController.swift */,
+				8BABC7801B3251A300367968 /* AvaliacoesCollectionView.swift */,
 				8B30238E1B290C4700C21CFF /* DetailViewController.swift */,
 				8B30238F1B290C4700C21CFF /* DetailViewController2.swift */,
 				8B30238D1B290C4700C21CFF /* TableViewController2.swift */,
@@ -213,6 +214,17 @@
 				D60A08621B3224C0007B25E6 /* Images */,
 				D60A08541B322444007B25E6 /* Picker */,
 				8B30239C1B290C9800C21CFF /* main.m */,
+				8BABC76E1B3205E900367968 /* brick.jpg */,
+				8BABC7781B320D9100367968 /* Books.jpg */,
+				8BABC7701B32069300367968 /* tree.jpg */,
+				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
+				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
+				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
+				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
+				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
+				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
+				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
+				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
 				8B30238B1B290C4600C21CFF /* CollegeManager-Bridging-Header.h */,
 				8B3023681B290C2000C21CFF /* Info.plist */,
 			);
@@ -261,10 +273,6 @@
 		D60A08621B3224C0007B25E6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8BABC76E1B3205E900367968 /* brick.jpg */,
-				8BABC7781B320D9100367968 /* Books.jpg */,
-				8BABC77A1B320DE100367968 /* books2.png */,
-				8BABC7701B32069300367968 /* tree.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -272,14 +280,6 @@
 		D60A08631B3224D4007B25E6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
-				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
-				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
-				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
-				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
-				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
-				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
-				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -397,7 +397,6 @@
 				8B1FEA451B29ACED0016F6E1 /* WeekHeaderView.xib in Resources */,
 				8BABC7711B32069300367968 /* tree.jpg in Resources */,
 				8B3023761B290C2000C21CFF /* LaunchScreen.xib in Resources */,
-				8BABC77B1B320DE100367968 /* books2.png in Resources */,
 				D60A085D1B32247A007B25E6 /* downArrow@2x.png in Resources */,
 				8B1FEA3F1B29ACED0016F6E1 /* CalendarView.xib in Resources */,
 				D60A085E1B32247A007B25E6 /* downArrow@3x.png in Resources */,
@@ -446,6 +445,7 @@
 				8B3023A61B290C9800C21CFF /* main.m in Sources */,
 				8B1FEA301B29AA7C0016F6E1 /* CadastroViewController.swift in Sources */,
 				D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */,
+				8BABC7811B3251A300367968 /* AvaliacoesCollectionView.swift in Sources */,
 				8B3023901B290C4700C21CFF /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

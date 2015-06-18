@@ -49,9 +49,15 @@ class MasterViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-//        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
-//        self.tableView.reloadData()
         
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: Selector("openMenu"))
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.darkGrayColor()
+    }
+    
+    func openMenu(){
+
+        HKAppDelegate.mainDelegate().slideMenuVC.toggleMenu()
     }
     
     // MARK: - Segues
@@ -105,7 +111,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
-            view.backgroundColor = UIColor.grayColor()
+            view.backgroundColor = UIColor.lightGrayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: view.bounds.height/2, width: self.view.bounds.width, height: 40))
             label.center = view.center
             label.text = "College Manager"
@@ -115,7 +121,7 @@ class MasterViewController: UITableViewController {
             return view
         }else{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 50))
-            view.backgroundColor = UIColor.grayColor()
+            view.backgroundColor = UIColor.lightGrayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: 5, width: self.view.bounds.width, height: 40))
             label.center.x = view.center.x
             label.text = "Próximos eventos"
@@ -128,18 +134,24 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        
+//        cell.textLabel?.textColor = UIColor.redColor()
         
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator
         }else{
             
-            var nome = avaliacaoArray[indexPath.item].nome
-//          var dataF = String(avaliacaoArray[indexPath.item].dataFinal)
-            
-            cell.textLabel?.text = nome //+ dataF
-            
+            // Set appropriate labels for the cells.
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "Prova APD3"
+            }
+            else if indexPath.row == 1 {
+                cell.textLabel?.text = "Lista de Cálculo"
+            }
+            else {
+                cell.textLabel?.text = "Projeto Mobile"
+                
+            }
         }
         return cell
     }

@@ -35,6 +35,9 @@ class DetailViewController2: UIViewController {
     }
 
    
+    @IBAction func didPressedBackButton(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
 
