@@ -48,12 +48,12 @@ class CadastroViewController: UIViewController{
         // implement save
         //implement save methods
         
-        let disciplinaManager = DisciplinaManager.sharedInstance
+//        let disciplinaManager = DisciplinaManager.sharedInstance
         let avaliacaoManager = AvaliacaoManager.sharedInstance
         
-        //Nova disciplina
-        var newDisciplina = disciplinaManager.novaDisciplina()
-        newDisciplina.nome = disciplinaTextField.text!
+//        //Nova disciplina
+//        var newDisciplina = disciplinaManager.novaDisciplina()
+//        newDisciplina.nome = disciplinaTextField.text!
         
         var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = nameTextField.text!
@@ -63,7 +63,7 @@ class CadastroViewController: UIViewController{
 //        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
         
-        newDisciplina.addAvaliacao(avaliacao)
+//        newDisciplina.addAvaliacao(avaliacao)
         
         // Teste pra exibir --------
         let ss = avaliacaoManager.buscarAvaliacoes()[0].nome

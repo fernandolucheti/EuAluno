@@ -30,7 +30,6 @@ class CadastroDisciplinaViewController: UIViewController{
     
     @IBAction func SaveButton(sender: UIButton) {
         // implement save
-        //implement save methods
         
         let disciplinaManager = DisciplinaManager.sharedInstance
      

@@ -41,6 +41,7 @@ public class DisciplinaManager {
     func buscarDisciplinas() -> Array<Disciplina>
     {
         let fetchRequest = NSFetchRequest(entityName: DisciplinaManager.entityName)
+        
         var error:NSError?
         
         let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
@@ -55,6 +56,13 @@ public class DisciplinaManager {
         
         return Array<Disciplina>()
     }
+    
+    func buscarIdDisciplina(nome: String) { //Pra fazer o relacionamento
+        
+        
+    }
+    
+    
     
     
     

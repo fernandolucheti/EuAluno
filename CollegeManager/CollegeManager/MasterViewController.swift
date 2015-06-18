@@ -10,10 +10,15 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
+    
+    let avaliacaoManager = AvaliacaoManager()
+    var avaliacaoArray: Array<Avaliacao>!
 
     override func viewDidLoad() {
         //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
+        
+        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
         
 //        ///------ Teste CoreData ---------- OK ------
 //        let disciplinaManager = DisciplinaManager.sharedInstance
@@ -41,9 +46,12 @@ class MasterViewController: UITableViewController {
 //        ckh.saveTodo("blá blá 22")
         
         //-------------------------------------------
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
-        
-        
+//        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
+//        self.tableView.reloadData()
         
     }
     
@@ -73,7 +81,7 @@ class MasterViewController: UITableViewController {
         if section == 0{
             return 1
         }else{
-            return 3
+            return avaliacaoArray.count
         }
     }
     
@@ -127,20 +135,13 @@ class MasterViewController: UITableViewController {
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator
         }else{
-            // Set appropriate labels for the cells.
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "Prova APD3"
-            }
-            else if indexPath.row == 1 {
-                cell.textLabel?.text = "Lista de Cálculo"
-            }
-            else {
-                cell.textLabel?.text = "Projeto Mobile"
-                
-            }
+            
+            var nome = avaliacaoArray[indexPath.item].nome
+//          var dataF = String(avaliacaoArray[indexPath.item].dataFinal)
+            
+            cell.textLabel?.text = nome //+ dataF
+            
         }
-        
-        
         return cell
     }
 
