@@ -69,9 +69,9 @@ class CadastroViewController: UIViewController{
         
         
         // Teste pra exibir --------
-        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
-        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
-        println("\(ss) - \(rr)")
+        //let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
+        //let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
+//        println("\(ss) - \(rr)")
         // --------------
         
         //Alert with some message

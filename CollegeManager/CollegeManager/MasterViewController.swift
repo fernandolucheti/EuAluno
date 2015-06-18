@@ -167,8 +167,8 @@ class MasterViewController: UITableViewController {
         }else{
             
             var nome = avaliacaoArray[indexPath.item].nome
-//          var dataF = String(avaliacaoArray[indexPath.item].dataFinal)
-            
+            // var dataF = String(avaliacaoArray[indexPath.item].dataFinal)     //Para exibir a data
+
             cell.textLabel?.text = nome //+ dataF
             
         }

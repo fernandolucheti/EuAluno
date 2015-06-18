@@ -49,7 +49,7 @@ class TableViewController2: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            DisciplinaSingleton.sharedInstance.nome = "Trabalho"
+            DisciplinaSingleton.sharedInstance.nome = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
             self.performSegueWithIdentifier("showDetail1fromTableView2", sender: self)
         } else {
             self.performSegueWithIdentifier("showDetail2fromTableView2", sender: self)

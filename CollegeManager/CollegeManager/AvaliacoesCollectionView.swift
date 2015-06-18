@@ -15,18 +15,24 @@ class AvaliacoesCollectionViewController: UICollectionViewController {
 
         name = DisciplinaSingleton.sharedInstance.nome
         if name != nil{
-            avaliacoes = DisciplinaManager.sharedInstance.getAvaliacoes(name!) as Array<Avaliacao>
+            avaliacoes = DisciplinaManager.sharedInstance.getAvaliacoes(name!)
         }
     }
     func update(notification:NSNotification){
     }
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        if avaliacoes != nil{
+           return avaliacoes.count
+        }else{
+            return 0
+        }
+        
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! AvaliacaoCell
         if avaliacoes != nil{
+            println()
            cell.nameLabel.text = avaliacoes[indexPath.row].nome 
         }
         
