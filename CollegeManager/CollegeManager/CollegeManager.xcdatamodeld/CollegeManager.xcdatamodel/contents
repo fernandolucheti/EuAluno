@@ -3,7 +3,7 @@
     <entity name="Avaliacao" representedClassName="Avaliacao" syncable="YES">
         <attribute name="completo" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="dataEntrega" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="dataFinal" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="entregueEm" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nota" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="tipo" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -14,7 +14,7 @@
         <relationship name="avaliacoes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Avaliacao" inverseName="disciplina" inverseEntity="Avaliacao" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Avaliacao" positionX="-288" positionY="-75" width="117" height="148"/>
+        <element name="Avaliacao" positionX="-288" positionY="-75" width="117" height="150"/>
         <element name="Disciplina" positionX="-486" positionY="-117" width="108" height="73"/>
     </elements>
 </model>

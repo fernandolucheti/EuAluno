@@ -42,7 +42,7 @@ class MasterViewController: UITableViewController {
         
         
 //        let ckh = CloudKitHelper()
-//        ckh.saveTodo("blá blá 22")
+//        ckh.syncToCoreData()
         
         //-------------------------------------------
     }
@@ -160,7 +160,6 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-//        cell.textLabel?.textColor = UIColor.redColor()
         
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
@@ -175,6 +174,7 @@ class MasterViewController: UITableViewController {
         }
         return cell
     }
+
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0{

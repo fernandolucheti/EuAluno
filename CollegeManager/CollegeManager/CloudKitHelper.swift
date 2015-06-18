@@ -15,12 +15,11 @@ protocol CloudKitDelegate {
 }
 
 
-class CloudKitHelper {
+class CloudKitHelper: NSObject {
     var container : CKContainer
-    var publicDB : CKDatabase
+//    var publicDB : CKDatabase
     let privateDB : CKDatabase
     var delegate : CloudKitDelegate?
-//    var todos = [Todos]()
     var avaliacoes = [AvaliacaoObj]()
     
 //    class Todos {
@@ -38,22 +37,12 @@ class CloudKitHelper {
     
     static let sharedInstance = CloudKitHelper()
     
-    init() {
+    override init() {
+        
         container = CKContainer.defaultContainer()
-        publicDB = container.publicCloudDatabase
+//        publicDB = container.publicCloudDatabase
         privateDB = container.privateCloudDatabase
     }
-    
-//    func saveTodo(todo : NSString) {
-//        
-//        let todoRecord = CKRecord(recordType: "Todos")
-//        todoRecord.setValue(todo, forKey: "todotext")
-//        publicDB.saveRecord(todoRecord, completionHandler: { (record, error) -> Void in
-//            println("Before saving in cloud kit : \(self.todos.count)")
-//            println("Saved in cloudkit")
-////            self.fetchTodos(record)
-//        })
-//    }
     
     func saveAvaliacao(avaliacao : Avaliacao) {
         
@@ -61,14 +50,14 @@ class CloudKitHelper {
         
         avaliRecord.setValue(avaliacao.nome, forKey: "nome")
         avaliRecord.setValue(avaliacao.nota, forKey: "nota")
-        avaliRecord.setValue(avaliacao.dataFinal, forKey: "dataFinal")
         avaliRecord.setValue(avaliacao.dataEntrega, forKey: "dataEntrega")
+        avaliRecord.setValue(avaliacao.entregueEm, forKey: "entregueEm")
         avaliRecord.setValue(avaliacao.completo, forKey: "completo")
         avaliRecord.setValue(avaliacao.tipo, forKey: "tipo")
         
-        publicDB.saveRecord(avaliRecord, completionHandler: { (record, error) -> Void in
+        privateDB.saveRecord(avaliRecord, completionHandler: { (record, error) -> Void in
             println("Saved in cloudkit")
-            self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
+            self.avaliacoes = self.fetchAvaliacao(record, complete: {})
         })
     }
     
@@ -78,28 +67,23 @@ class CloudKitHelper {
         
         disRecord.setValue(disciplina.nome, forKey: "nome")
         
-        publicDB.saveRecord(disRecord, completionHandler: { (record, error) -> Void in
+        privateDB.saveRecord(disRecord, completionHandler: { (record, error) -> Void in
             println("Saved in cloudkit")
-            self.avaliacoes = self.fetchAvaliacao(record, queryString: "")
+//            self.disciplinas = self.fetchDisciplina(record, queryString: "")
         })
     }
     
-    func fetchAvaliacao(insertedRecord: CKRecord?, queryString: String) -> [AvaliacaoObj] {
+    func fetchAvaliacao(insertedRecord: CKRecord?, complete: ()->() ) -> [AvaliacaoObj] { //Passar nulo se nao tiver (queryString sem uso)
         
         var tempAval = [AvaliacaoObj]()
         
         let predicate = NSPredicate(value: true)
-        
-//        Predicate example
-//        predicate = NSPredicate(format: "")   //get error
-//        predicate = [NSPredicate predicateWithFormat:@"ANY favoriteColors = 'red'"];
-//        predicate = [NSPredicate predicateWithFormat:@"favoriteColors CONTAINS 'red'"];
 
         let sort = NSSortDescriptor(key: "creationDate", ascending: false)
         let query = CKQuery(recordType: "Avaliacao", predicate:  predicate)
         query.sortDescriptors = [sort]
         
-        publicDB.performQuery(query, inZoneWithID: nil) {
+        privateDB.performQuery(query, inZoneWithID: nil) {
             results, error in
             
             if error != nil {
@@ -110,26 +94,28 @@ class CloudKitHelper {
             } else {
 //                self.avaliacoes.removeAll()
                 
-                
                 for record in results{
-                    let avaliacao = AvaliacaoObj(record: record as! CKRecord, database: self.publicDB)
+                    let avaliacao = AvaliacaoObj(record: record as! CKRecord, database: self.privateDB)
                     
 //                    self.avaliacoes.append(avaliacao)
                     tempAval.append(avaliacao)
                 }
                 if let tmp = insertedRecord {   //Pode passar 'nil' pro record se n tiver
-                    let avaliacao = AvaliacaoObj(record: insertedRecord! as CKRecord, database: self.publicDB)
+                    let avaliacao = AvaliacaoObj(record: insertedRecord! as CKRecord, database: self.privateDB)
                     
                     /* Work around at the latest entry at index 0 */
                     tempAval.insert(avaliacao, atIndex: 0)
                 }
                 
-                
                 dispatch_async(dispatch_get_main_queue()) {
                     self.delegate?.modelUpdated()
                     println("Fetch after save: \(tempAval.count)")
                     
-                    // teste ---------------------
+                    self.avaliacoes = tempAval
+                    
+                    complete()
+                    
+                    // teste exibir ---------------------
                     for obj in tempAval {
                         println("\(obj.nome!) - \(obj.nota!)")
                     }
@@ -139,8 +125,42 @@ class CloudKitHelper {
                 }
             }
         }
-        
         return tempAval
+    }
+    
+    func syncToCoreData(){
+        
+        let avaliacaoManager = AvaliacaoManager.sharedInstance
+        var avaliacaoArray = Array<AvaliacaoObj>()
+        
+        self.fetchAvaliacao(nil) {
+            
+            for a in self.avaliacoes {
+                
+                var avaliacao = avaliacaoManager.novaAvaliacao()
+                avaliacao.nome = a.nome!
+                avaliacao.dataEntrega = a.dataEntrega!
+                avaliacao.completo = a.completo!
+                avaliacao.tipo = a.tipo!
+                avaliacao.sync = true
+                
+                if let entregueEm = a.entregueEm {
+                    avaliacao.entregueEm = entregueEm
+                }
+                if let nota = a.nota {
+                    avaliacao.nota = nota
+                }
+                
+                
+                // let disciplinaManager = DisciplinaManager()
+                // avaliacao.disciplina = disciplinaManager.buscarDisciplina(disciplinaTextField.text)
+                
+                // avaliacao.nota = 6                                      // Falta adicionar
+                avaliacaoManager.salvar()
+            }
+            
+        }
+        
     }
     
     
