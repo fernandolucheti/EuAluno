@@ -39,6 +39,7 @@ class CadastroViewController: UIViewController{
     }
     
     @IBAction func addDisciplinaButtonPressed(sender: UIButton) {
+        
         var mainStoryboard = self.storyboard
         var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("CadastroDisciplina") as! UIViewController
         vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
