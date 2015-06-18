@@ -20,6 +20,7 @@ class Avaliacao: NSManagedObject {
     @NSManaged var nota: NSNumber
     @NSManaged var tipo: NSNumber
     @NSManaged var disciplina: Disciplina
+    var sync = false
 
 }
 

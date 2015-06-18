@@ -142,6 +142,7 @@ class CloudKitHelper: NSObject {
                 avaliacao.dataFinal = a.dataFinal!
                 avaliacao.completo = a.completo!
                 avaliacao.tipo = a.tipo!
+                avaliacao.sync = true
                 
                 // let disciplinaManager = DisciplinaManager()
                 // avaliacao.disciplina = disciplinaManager.buscarDisciplina(disciplinaTextField.text)

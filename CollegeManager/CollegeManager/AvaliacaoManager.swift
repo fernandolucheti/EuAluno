@@ -35,8 +35,10 @@ public class AvaliacaoManager {
         var error:NSError?
         managedContext.save(&error)
         
-        let ckh = CloudKitHelper()
-        ckh.saveAvaliacao(avaliacao!)
+        if avaliacao!.sync {
+            let ckh = CloudKitHelper()
+            ckh.saveAvaliacao(avaliacao!)
+        }
         
         if let e = error {
             println("Could not save. Error: \(error), \(error!.userInfo)")

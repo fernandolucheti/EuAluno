@@ -87,8 +87,6 @@
         [[NSUserDefaults standardUserDefaults] setBool: true forKey:@"firstTime"];
     }
     
-    
-    
     return YES;
 }
 							
