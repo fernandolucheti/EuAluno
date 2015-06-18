@@ -45,8 +45,8 @@
 		D60A085E1B32247A007B25E6 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D60A08571B32247A007B25E6 /* downArrow@3x.png */; };
 		D60A085F1B32247A007B25E6 /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A08591B32247A007B25E6 /* DownPicker.m */; };
 		D60A08601B32247A007B25E6 /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D60A085B1B32247A007B25E6 /* UIDownPicker.m */; };
+		D60A08671B32B942007B25E6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A08661B32B942007B25E6 /* Avaliacao.swift */; };
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
-		D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606901B292F9200C9E8F6 /* Avaliacao.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
 		D69606961B29C2E500C9E8F6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69606951B29C2E500C9E8F6 /* CloudKit.framework */; };
 		D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */; };
@@ -112,8 +112,8 @@
 		D60A08591B32247A007B25E6 /* DownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownPicker.m; sourceTree = "<group>"; };
 		D60A085A1B32247A007B25E6 /* UIDownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDownPicker.h; sourceTree = "<group>"; };
 		D60A085B1B32247A007B25E6 /* UIDownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDownPicker.m; sourceTree = "<group>"; };
+		D60A08661B32B942007B25E6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
-		D69606901B292F9200C9E8F6 /* Avaliacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avaliacao.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
 		D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CollegeManager.entitlements; sourceTree = "<group>"; };
 		D69606951B29C2E500C9E8F6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -298,8 +298,8 @@
 		D69606891B291B8100C9E8F6 /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
+				D60A08661B32B942007B25E6 /* Avaliacao.swift */,
 				D69606921B292F9300C9E8F6 /* Disciplina.swift */,
-				D69606901B292F9200C9E8F6 /* Avaliacao.swift */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -432,7 +432,6 @@
 				8B3023971B290C6900C21CFF /* AvaliacaoManager.swift in Sources */,
 				D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */,
 				8B1FEA401B29ACED0016F6E1 /* MonthCollectionCell.swift in Sources */,
-				D69606911B292F9200C9E8F6 /* Avaliacao.swift in Sources */,
 				8B1FEA481B29ACED0016F6E1 /* NSDateAdditions.swift in Sources */,
 				8B3023911B290C4700C21CFF /* TableViewController2.swift in Sources */,
 				8B1FEA441B29ACED0016F6E1 /* WeekHeaderView.swift in Sources */,
@@ -443,6 +442,7 @@
 				8B1FEA471B29ACED0016F6E1 /* Date.swift in Sources */,
 				8B3023931B290C4700C21CFF /* DetailViewController2.swift in Sources */,
 				8B3023A61B290C9800C21CFF /* main.m in Sources */,
+				D60A08671B32B942007B25E6 /* Avaliacao.swift in Sources */,
 				8B1FEA301B29AA7C0016F6E1 /* CadastroViewController.swift in Sources */,
 				D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */,
 				8BABC7811B3251A300367968 /* AvaliacoesCollectionView.swift in Sources */,

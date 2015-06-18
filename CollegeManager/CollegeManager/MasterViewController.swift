@@ -49,8 +49,6 @@ class MasterViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: Selector("openMenu"))
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.darkGrayColor()
     }
