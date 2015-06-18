@@ -49,6 +49,7 @@ class TableViewController2: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
+            DisciplinaSingleton.sharedInstance.nome = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
             self.performSegueWithIdentifier("showDetail1fromTableView2", sender: self)
         } else {
             self.performSegueWithIdentifier("showDetail2fromTableView2", sender: self)
@@ -61,10 +62,10 @@ class TableViewController2: UITableViewController {
 
        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
       
-        if segue.identifier == "showDetail1fromTableView2" {
+        if segue.identifier == "showDetail1fr3omTableView2" {
             let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
             controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-            controller.navigationItem.leftItemsSupplementBackButton = true
+//            controller.navigationItem.leftItemsSupplementBackButton = true
 
             controller.view.backgroundColor = UIColor.purpleColor()
             
@@ -72,7 +73,7 @@ class TableViewController2: UITableViewController {
             let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController2
             controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
             controller.navigationItem.leftItemsSupplementBackButton = true
-            controller.view.backgroundColor = UIColor.orangeColor()
+//            controller.view.backgroundColor = UIColor.orangeColor()
         }
         
         

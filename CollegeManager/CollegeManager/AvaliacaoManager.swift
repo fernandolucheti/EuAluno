@@ -35,8 +35,10 @@ public class AvaliacaoManager {
         var error:NSError?
         managedContext.save(&error)
         
-        let ckh = CloudKitHelper()
-        ckh.saveAvaliacao(avaliacao!)
+        if !avaliacao!.sync {       //Salva no iCloud só se não for para sincronizar
+            let ckh = CloudKitHelper()
+            ckh.saveAvaliacao(avaliacao!)
+        }
         
         if let e = error {
             println("Could not save. Error: \(error), \(error!.userInfo)")
@@ -48,11 +50,11 @@ public class AvaliacaoManager {
         let fetchRequest = NSFetchRequest(entityName: AvaliacaoManager.entityName)
         
         // Create a sort descriptor object that sorts on the "dataFinal"
-        let sortDescriptor = NSSortDescriptor(key: "dataFinal", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "dataEntrega", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         // Create a new predicate that filters out any object before today.
-        let predicate = NSPredicate(format: "dataFinal >= %@", NSDate())
+        let predicate = NSPredicate(format: "dataEntrega >= %@", NSDate())
         
         fetchRequest.predicate = predicate
         

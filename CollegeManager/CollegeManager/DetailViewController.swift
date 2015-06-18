@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
@@ -28,9 +28,30 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        println(UIScreen.mainScreen().bounds.height)
+        if (UIScreen.mainScreen().bounds.height < 737){
+        if HKAppDelegate.mainDelegate().isFirstAccess{
+            var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+            view.backgroundColor = UIColor.whiteColor()
+            self.view.addSubview(view)
+        }
+        }
+    }
+    override func viewDidAppear(animated: Bool) {
+        if (UIScreen.mainScreen().bounds.height < 737){
+        if HKAppDelegate.mainDelegate().isFirstAccess{
+            HKAppDelegate.mainDelegate().isFirstAccess = false
+            var mainStoryboard = self.storyboard
+            var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("Master") as! UIViewController
 
+            self.showViewController(vc, sender: self)
+            }}
+    }
     override func viewDidLoad() {
         //super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         //self.configureView()

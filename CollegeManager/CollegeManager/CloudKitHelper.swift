@@ -50,8 +50,8 @@ class CloudKitHelper: NSObject {
         
         avaliRecord.setValue(avaliacao.nome, forKey: "nome")
         avaliRecord.setValue(avaliacao.nota, forKey: "nota")
-        avaliRecord.setValue(avaliacao.dataFinal, forKey: "dataFinal")
         avaliRecord.setValue(avaliacao.dataEntrega, forKey: "dataEntrega")
+        avaliRecord.setValue(avaliacao.entregueEm, forKey: "entregueEm")
         avaliRecord.setValue(avaliacao.completo, forKey: "completo")
         avaliRecord.setValue(avaliacao.tipo, forKey: "tipo")
         
@@ -139,9 +139,18 @@ class CloudKitHelper: NSObject {
                 
                 var avaliacao = avaliacaoManager.novaAvaliacao()
                 avaliacao.nome = a.nome!
-                avaliacao.dataFinal = a.dataFinal!
+                avaliacao.dataEntrega = a.dataEntrega!
                 avaliacao.completo = a.completo!
                 avaliacao.tipo = a.tipo!
+                avaliacao.sync = true
+                
+                if let entregueEm = a.entregueEm {
+                    avaliacao.entregueEm = entregueEm
+                }
+                if let nota = a.nota {
+                    avaliacao.nota = nota
+                }
+                
                 
                 // let disciplinaManager = DisciplinaManager()
                 // avaliacao.disciplina = disciplinaManager.buscarDisciplina(disciplinaTextField.text)

@@ -49,6 +49,8 @@ class MasterViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+//        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
+//        self.tableView.reloadData()
         
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: Selector("openMenu"))
@@ -112,22 +114,46 @@ class MasterViewController: UITableViewController {
         if section == 0{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
             view.backgroundColor = UIColor.lightGrayColor()
+            let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
+            imgView.image = UIImage(named: "redblur.jpeg")
+            view.addSubview(imgView)
+            let v = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150))
+            v.backgroundColor = UIColor.whiteColor()
+            v.alpha = 0.3
+            view.addSubview(v)
+            
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: view.bounds.height/2, width: self.view.bounds.width, height: 40))
             label.center = view.center
             label.text = "College Manager"
             label.textAlignment = NSTextAlignment.Center
-            label.textColor = UIColor.whiteColor()
+            label.textColor = UIColor.darkGrayColor()
             view.addSubview(label)
+            let imgView2 = UIImageView(frame: CGRect(x: self.view.bounds.width/2 + 70, y: 10, width: 30, height: 30))
+            imgView2.center.y = view.center.y
+            imgView2.image = UIImage(named: "CollegeIcon.png")
+            view.addSubview(imgView2)
             return view
         }else{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 50))
             view.backgroundColor = UIColor.lightGrayColor()
             var label = UILabel(frame: CGRect(x: self.view.bounds.width/2, y: 5, width: self.view.bounds.width, height: 40))
+            let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 50))
+            imgView.image = UIImage(named: "redblur.jpeg")
+            view.addSubview(imgView)
+            let v = UIView(frame: CGRect(x: -2, y: 0, width: self.view.bounds.width + 10, height: 50))
+            v.backgroundColor = UIColor.whiteColor()
+            v.alpha = 0.8
+            v.layer.borderColor = UIColor.redColor().CGColor
+
+            v.layer.borderWidth = 0.6
+             view.addSubview(v)
             label.center.x = view.center.x
             label.text = "Próximos eventos"
+            
             label.textAlignment = NSTextAlignment.Center
-            label.textColor = UIColor.whiteColor()
+            label.textColor = UIColor.darkGrayColor()
             view.addSubview(label)
+            
             return view
         }
     }

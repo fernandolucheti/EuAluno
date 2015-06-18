@@ -99,7 +99,8 @@ public class DisciplinaManager {
         
         if let results = fetchedResults as? [Disciplina] {
             
-            let sortDescriptor = NSSortDescriptor(key: "dataFinal", ascending: false)
+            let sortDescriptor = NSSortDescriptor(key: "dataEntrega", ascending: false)
+            
             avaliacoes = results[0].avaliacoes.sortedArrayUsingDescriptors([sortDescriptor]) as! Array<Avaliacao>
             
             return avaliacoes

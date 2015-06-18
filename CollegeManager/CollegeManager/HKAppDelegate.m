@@ -12,7 +12,7 @@
 #import "CollegeManager-Swift.h"
 
 @interface HKAppDelegate () <HKSlideMenu3DControllerDelegate, UISplitViewControllerDelegate> {
-    
+
     HKMenuView *menuVC;
     HKRotationNavigationController *navMain;
     DetailViewController *altVC;
@@ -24,11 +24,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     // Override point for customization after application launch.
    // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 
         //        //Override point for customization after application launch.
+    _isFirstAccess = true;
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     splitViewController.presentsWithGesture = NO;
     splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryOverlay;
@@ -55,15 +57,15 @@
     }else{
         navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"navMain"];
     }
-    
+    navMain = (HKRotationNavigationController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"split"];
     self.slideMenuVC.menuViewController = menuVC;
     
     self.slideMenuVC.mainViewController = navMain;
-    UIImage *img = [UIImage imageNamed:@"books2.png"];
+    UIImage *img = [UIImage imageNamed:@"cloud6.jpg"];
     self.slideMenuVC.backgroundImage = img;
 
 
-    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeBottomLeft;
+    self.slideMenuVC.backgroundImageContentMode = UIViewContentModeScaleAspectFill;
     self.slideMenuVC.enablePan = YES;
     
     //Set delegate methods in currect controller or another class, for example Menu
@@ -73,7 +75,7 @@
     //NSLog(NSStringFromClass(self.window.rootViewController));
     
     [self.window setRootViewController:self.slideMenuVC];
-    
+
     [self.window makeKeyAndVisible];
 
     
@@ -86,8 +88,6 @@
         
         [[NSUserDefaults standardUserDefaults] setBool: true forKey:@"firstTime"];
     }
-    
-    
     
     return YES;
 }

@@ -39,6 +39,7 @@ class CadastroViewController: UIViewController{
     }
     
     @IBAction func addDisciplinaButtonPressed(sender: UIButton) {
+        
         var mainStoryboard = self.storyboard
         var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("CadastroDisciplina") as! UIViewController
         vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
@@ -58,7 +59,7 @@ class CadastroViewController: UIViewController{
         
         var avaliacao = avaliacaoManager.novaAvaliacao()
         avaliacao.nome = nameTextField.text!
-        avaliacao.dataFinal = datePicker.date
+        avaliacao.dataEntrega = datePicker.date
         avaliacao.completo = 0
         avaliacao.tipo = 1
         let disciplinaManager = DisciplinaManager()
@@ -68,9 +69,9 @@ class CadastroViewController: UIViewController{
         
         
         // Teste pra exibir --------
-        let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
-        let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
-        println("\(ss) - \(rr)")
+        //let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
+        //let rr = avaliacaoManager.buscarAvaliacoes()[0].nota
+//        println("\(ss) - \(rr)")
         // --------------
         
         //Alert with some message
