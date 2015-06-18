@@ -75,6 +75,19 @@
     [self.window setRootViewController:self.slideMenuVC];
     
     [self.window makeKeyAndVisible];
+
+    
+    bool firstTime = [[NSUserDefaults standardUserDefaults] boolForKey:@"firstTime"];
+    
+    if (firstTime == false) {
+        
+        CloudKitHelper *ckh = [[CloudKitHelper alloc] init];
+        [ckh syncToCoreData];
+        
+        [[NSUserDefaults standardUserDefaults] setBool: true forKey:@"firstTime"];
+    }
+    
+    
     
     return YES;
 }
@@ -205,7 +218,8 @@
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        
+        abort();    //Se erro aqui, reinstalar app
     }
     
     return _persistentStoreCoordinator;

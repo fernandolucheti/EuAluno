@@ -42,7 +42,7 @@ class MasterViewController: UITableViewController {
         
         
 //        let ckh = CloudKitHelper()
-//        ckh.saveTodo("blá blá 22")
+//        ckh.syncToCoreData()
         
         //-------------------------------------------
     }
