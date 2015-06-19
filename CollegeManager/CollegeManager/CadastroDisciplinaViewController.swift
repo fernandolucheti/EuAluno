@@ -22,6 +22,9 @@ class CadastroDisciplinaViewController: UIViewController{
         // self.navigationBar.backItem?.title = "voltar"
     }
     
+    @IBAction func backButton(sender: UIButton) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func CancelButton(sender: UIButton) {
         
         

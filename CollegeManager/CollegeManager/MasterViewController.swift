@@ -157,10 +157,13 @@ class MasterViewController: UITableViewController {
             return view
         }
     }
-
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        self.tableView.reloadData()
+        
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
         if indexPath.section == 0{
             cell.textLabel?.text = "Matérias"
             cell.accessoryType = .DisclosureIndicator
@@ -180,7 +183,25 @@ class MasterViewController: UITableViewController {
         if indexPath.section == 0{
             self.performSegueWithIdentifier("showTableView2", sender: self)
         }else{
-            self.performSegueWithIdentifier("showDetail1", sender: self)
+            var mainStoryboard = self.storyboard
+            var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("AvaliacaoController") as! AvaliacaoViewController
+            
+            vc.grade = Double(avaliacaoArray[indexPath.row].nota)
+            vc.subjectName = avaliacaoArray[indexPath.row].disciplina.nome
+            vc.examName = avaliacaoArray[indexPath.row].nome
+            if avaliacaoArray[indexPath.row].completo == 1{
+                vc.checked = true
+            }else{
+                vc.checked = false
+            }
+            vc.date = avaliacaoArray[indexPath.row].dataEntrega
+            
+            
+            
+            
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverFullScreen
+            
+            self.presentViewController(vc, animated: true, completion: nil)
         }
         
     }

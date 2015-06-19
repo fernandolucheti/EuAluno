@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
             self.view.addSubview(view)
         }
         }
+        self.title = DisciplinaSingleton.sharedInstance.nome
     }
     override func viewDidAppear(animated: Bool) {
         if (UIScreen.mainScreen().bounds.height < 737){
@@ -48,6 +49,7 @@ class DetailViewController: UIViewController {
 
             self.showViewController(vc, sender: self)
             }}
+        
     }
     override func viewDidLoad() {
         //super.viewDidLoad()

@@ -74,14 +74,14 @@ class NotificationController: NSObject {
             alertBody = deadlineExamDateAlertBody
         }
 
-        setLocalNotification(
-            eventDate,
-            repeatInterval: nil,
-            alertTitle: nil,
-            alertBody: alertBody,
-            alertAction: nil,
-            userInfo: deadlineDateUserInfo
-        )
+//        setLocalNotification(
+//            eventDate,
+//            repeatInterval: nil,
+//            alertTitle: alertTitle,
+//            alertBody: alertBody,
+//            alertAction: nil,
+//            userInfo: deadlineDateUserInfo
+//        )
     }
 
     func setReminder(name : String, date : NSDate, type : EventType) {
@@ -96,6 +96,8 @@ class NotificationController: NSObject {
     }
 
     func setReminder(event : Avaliacao) {
+        let eventName = event.nome
+        let eventDate = event.dataEntrega // event.dataEntrega
         let eventType : EventType
 
         if event.tipo == 1 {

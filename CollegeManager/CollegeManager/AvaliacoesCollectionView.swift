@@ -28,12 +28,39 @@ class AvaliacoesCollectionViewController: UICollectionViewController {
         }
         
     }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+        var mainStoryboard = self.storyboard
+        var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("AvaliacaoController") as! AvaliacaoViewController
+        
+        vc.grade = Double(avaliacoes[indexPath.item].nota)
+        vc.subjectName = avaliacoes[indexPath.item].disciplina.nome
+        vc.examName = avaliacoes[indexPath.item].nome
+        if avaliacoes[indexPath.item].completo == 1{
+            vc.checked = true
+        }else{
+            vc.checked = false
+        }
+        vc.date = avaliacoes[indexPath.item].dataEntrega
+        
+
+        
+        
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! AvaliacaoCell
         if avaliacoes != nil{
             println()
-           cell.nameLabel.text = avaliacoes[indexPath.row].nome 
+           cell.nameLabel.text = avaliacoes[indexPath.row].nome
+
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy" //format style. Browse online to get a format that fits your needs.
+            cell.notaLabel.text = avaliacoes[indexPath.row].nota.stringValue
+            cell.dataLabel.text =  dateFormatter.stringFromDate(avaliacoes[indexPath.row].dataEntrega)
         }
         
        // cell.layer.cornerRadius = 7

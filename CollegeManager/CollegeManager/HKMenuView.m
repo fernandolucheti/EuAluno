@@ -70,7 +70,7 @@
     UIFont *correctFont = [UIFont boldSystemFontOfSize: 27];
     cell.textLabel.font = correctFont;
     
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
     cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
