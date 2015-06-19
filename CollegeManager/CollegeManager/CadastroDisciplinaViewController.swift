@@ -22,6 +22,13 @@ class CadastroDisciplinaViewController: UIViewController{
         // self.navigationBar.backItem?.title = "voltar"
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        self.nameTextField.resignFirstResponder()
+    }
+    override func viewDidAppear(animated: Bool) {
+        
+    }
     @IBAction func backButton(sender: UIButton) {
          self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -41,6 +48,8 @@ class CadastroDisciplinaViewController: UIViewController{
         newDisciplina.nome = nameTextField.text!
         disciplinaManager.salvar()
         // --------------
+        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newDisciplina", object: nil))
         
         //Alert with some message
         

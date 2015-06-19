@@ -17,7 +17,18 @@ class CadastroViewController: UIViewController{
     @IBOutlet weak var disciplinaTextField: UITextField!
     var downPicker: DownPicker?
 
-    
+    override func viewDidAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reload"), name: "newDisciplina", object: nil)
+    }
+    func reload(){
+        let disciplinaManager = DisciplinaManager()
+        let disciplinaArray = disciplinaManager.buscarDisciplinas()
+        var disciplinas = NSMutableArray()
+        for d in disciplinaArray {
+            disciplinas.addObject(d.nome)
+        }
+        downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)
+    }
     override func viewDidLoad() {
 //        super.viewDidLoad()
 //        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -27,15 +38,16 @@ class CadastroViewController: UIViewController{
         //self.view.backgroundColor = UIColor.whiteColor()
         // self.navigationBar.backItem?.title = "voltar"
         
-        
         let disciplinaManager = DisciplinaManager()
         let disciplinaArray = disciplinaManager.buscarDisciplinas()
         var disciplinas = NSMutableArray()
         for d in disciplinaArray {
             disciplinas.addObject(d.nome)
         }
+        downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)
         
-        downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)   //Colocar array de Disciplinas
+        
+        //downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)   //Colocar array de Disciplinas
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -76,7 +88,7 @@ class CadastroViewController: UIViewController{
 //        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
         
-        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
         // Teste pra exibir --------
         //let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
         //let rr = avaliacaoManager.buscarAvaliacoes()[0].nota

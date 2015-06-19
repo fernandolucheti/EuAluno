@@ -118,19 +118,19 @@
 
 #pragma mark HKSlideMenu3DControllerDelegate methods
 -(void)willOpenMenu{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
 -(void)didOpenMenu{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
 -(void)willCloseMenu{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
 -(void)didCloseMenu{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+
 }
 
 

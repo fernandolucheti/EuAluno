@@ -16,7 +16,7 @@ class CalendarViewController: UIViewController, CalendarViewDelegate {
         
         super.viewDidLoad()
         let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-        imgView.image = UIImage(named: "blur2.jpeg")
+        imgView.image = UIImage(named: "redblur.jpeg")
         imgView.alpha = 0.6
         view.addSubview(imgView)
         var backView = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width*10, height: self.view.bounds.height*10))
