@@ -38,7 +38,21 @@ class NotificationController: NSObject {
                 options: nil)!
     }
 
-    private func removeLocalNotification() {}
+    private func removeLocalNotification(ID : NSManagedObjectID) {
+        let application = UIApplication.sharedApplication()
+        var reminder : UILocalNotification
+        var userInfo : [String : AnyObject]
+
+        for notification in application.scheduledLocalNotifications {
+            reminder = notification as! UILocalNotification
+            userInfo = reminder.userInfo as! [String : NSManagedObjectID]
+
+            if ID == userInfo["ID"] as! NSManagedObjectID {
+                application.cancelLocalNotification(reminder)
+                break
+            }
+        }
+    }
 
     private func setLocalNotification(
         fireDate : NSDate,
@@ -46,7 +60,7 @@ class NotificationController: NSObject {
         alertTitle : String,
         alertBody : String,
         alertAction : String?,
-        userInfo : String) {
+        userInfo : NSManagedObjectID) {
 
         var notification = UILocalNotification()
 
@@ -70,11 +84,7 @@ class NotificationController: NSObject {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
-    private func editLocalNotification() {
-
-    }
-
-    private func setDeadlineReminder(name: String, date : NSDate, type : EventType) {
+    private func setDeadlineReminder(name: String, date : NSDate, type : EventType, ID : NSManagedObjectID) {
 
         // Set a reminder for the event day.
 
@@ -92,11 +102,11 @@ class NotificationController: NSObject {
             alertTitle: name,
             alertBody: alertBody,
             alertAction: nil,
-            userInfo: deadlineDateUserInfo
+            userInfo: ID
         )
     }
 
-    func setReminder(name : String, date : NSDate, type : EventType) {
+    func setReminder(name : String, date : NSDate, type : EventType, ID : NSManagedObjectID) {
         let daysFromToday = daysFromNow(date)
         var day = daysFromToday - 7
         var duration = daysFromToday - 1
@@ -119,16 +129,14 @@ class NotificationController: NSObject {
                 alertTitle: name,
                 alertBody: alertBody,
                 alertAction: nil,
-                userInfo: remainingDaysUserInfo
+                userInfo: ID
             )
         }
 
-        setDeadlineReminder(name, date: date, type: type)
+        setDeadlineReminder(name, date: date, type: type, ID: ID)
     }
 
     func setReminder(event : Avaliacao) {
-        let eventName = event.nome
-        let eventDate = event.dataEntrega // event.dataEntrega
         let eventType : EventType
 
         if event.tipo == 1 {
@@ -137,7 +145,7 @@ class NotificationController: NSObject {
             eventType = EventType.Exam
         }
 
-        setReminder(event.nome, date: event.dataEntrega, type: eventType)
+        setReminder(event.nome, date: event.dataEntrega, type: eventType, ID: event.objectID)
     }
 
 }
