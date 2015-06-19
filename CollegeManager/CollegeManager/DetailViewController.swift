@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        println(UIScreen.mainScreen().bounds.height)
+
         if (UIScreen.mainScreen().bounds.height < 737){
         if HKAppDelegate.mainDelegate().isFirstAccess{
             var view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))

@@ -18,7 +18,7 @@ class MasterViewController: UITableViewController {
         
         
         avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("update"), name: "newTrabalho", object: nil)
 //        ///------ Teste CoreData ---------- OK ------
 //        let disciplinaManager = DisciplinaManager.sharedInstance
 //        let avaliacaoManager = AvaliacaoManager.sharedInstance
@@ -45,6 +45,10 @@ class MasterViewController: UITableViewController {
 //        ckh.syncToCoreData()
         
         //-------------------------------------------
+    }
+    func update(){
+        avaliacaoArray = avaliacaoManager.buscarAvaliacoes()
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
