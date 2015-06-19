@@ -20,39 +20,38 @@ class AvaliacaoViewController: UIViewController {
     @IBOutlet weak var underlineLabel: UILabel!
     
     
-    var checked: Bool?
-    var date: NSDate?
-    var examName: String?
-    var subjectName: String?
-    var grade: Double?
+//    var checked: Bool?
+    var avaliacao: Avaliacao?
+    
+    
     override func viewDidLoad() {
         
-        if checked!{
+        if avaliacao?.completo == 1{
             checkBoxOutlet.setAttributedTitle(NSAttributedString(string: "✓"), forState: UIControlState.Normal)
             gradeTextfield.enabled = true
+            
             underlineLabel.hidden = false
-            gradeTextfield.text = "\(grade!)"
-            checked = true
+            gradeTextfield.text = "\(Double(avaliacao!.nota))"
+//            checked = true
             
         }else{
             checkBoxOutlet.setAttributedTitle(NSAttributedString(string: ""), forState: UIControlState.Normal)
             gradeTextfield.enabled = false
             underlineLabel.hidden = true
-            checked = false
+//            checked = false
         }
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy" //format style. Browse online to get a format that fits your needs.
         
-        dateLabel.text = dateFormatter.stringFromDate(date!)
-        examNameTextField.text = examName
-        subjectNameLabel.text = subjectName
-        gradeTextfield.placeholder = "\(grade!)"
+        dateLabel.text = dateFormatter.stringFromDate(avaliacao!.dataEntrega)
+        examNameTextField.text = avaliacao?.nome
+        subjectNameLabel.text = avaliacao?.disciplina.nome
+        gradeTextfield.placeholder = "\(Double(avaliacao!.nota))"
         
         checkBoxOutlet.layer.cornerRadius = 6
         checkBoxOutlet.layer.borderColor = UIColor.blackColor().CGColor
         checkBoxOutlet.layer.borderWidth = 0.8
         //checkBoxOutlet.backgroundColor = UIColor.whiteColor()
-
     }
     
     @IBAction func backButton(sender: UIButton) {
@@ -73,21 +72,31 @@ class AvaliacaoViewController: UIViewController {
     @IBAction func didPressedSaveButton(sender: UIButton) {
         //implementar a edicao com os dados novos
         
+        avaliacao?.nome = examNameTextField.text
+        // o completo é modificado quando clica
+        avaliacao!.nota = NSNumber(double: (gradeTextfield.text as NSString).doubleValue)
+        
+        let am = AvaliacaoManager()
+        am.avaliacao = avaliacao
+        am.salvar()
     }
    
     @IBAction func didPressedCheckButton(sender: UIButton) {
-        if checked!{
+        if avaliacao!.completo == 1{
             checkBoxOutlet.setAttributedTitle(NSAttributedString(string: ""), forState: UIControlState.Normal)
             gradeTextfield.enabled = false
             underlineLabel.hidden = true
             gradeTextfield.text = ""
-            checked = false
+            avaliacao?.completo = 0
+//            checked = false
         }else{
             checkBoxOutlet.setAttributedTitle(NSAttributedString(string: "✓"), forState: UIControlState.Normal)
             gradeTextfield.enabled = true
             underlineLabel.hidden = false
-            gradeTextfield.text = "\(grade!)"
-            checked = true
+            gradeTextfield.text = "\(Double(avaliacao!.nota))"
+            avaliacao?.completo = 1
+//            checked = true
         }
     }
+    
 }

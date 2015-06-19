@@ -21,6 +21,7 @@ class Avaliacao: NSManagedObject {
     @NSManaged var tipo: NSNumber
     @NSManaged var disciplina: Disciplina
     var sync = false
+//    var cloudID: String?
 }
 
 class AvaliacaoObj {
