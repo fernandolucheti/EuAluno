@@ -17,6 +17,16 @@ class NotificationController: NSObject {
     private let deadlineExamDateAlertBody = "Você tem uma avaliação hoje!"
     private let deadlineAssignmentDateAlertBody = "Hoje é o dia da entrega!"
 
+    private func daysFromNow(date: NSDate) -> Int {
+        let daysFromNowComponent = NSCalendar
+            .currentCalendar()
+            .components(NSCalendarUnit.CalendarUnitDay, fromDate: NSDate(), toDate: date, options: nil)
+
+        return daysFromNowComponent.day
+    }
+
+    private func removeLocalNotification() {}
+
     private func setLocalNotification(
         fireDate : NSDate,
         repeatInterval : NSCalendarUnit,
@@ -47,7 +57,13 @@ class NotificationController: NSObject {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
+    private func editLocalNotification() {
+
+    }
+
     private func setDeadlineReminder(eventName: String, eventDate : NSDate, eventType : EventType) {
+
+
         let fireDate = eventDate
         let alertTitle = eventName
         let alertBody : String
@@ -68,7 +84,16 @@ class NotificationController: NSObject {
 //        )
     }
 
-    func setReminder(name : String, date : NSDate, type : EventType) {}
+    func setReminder(name : String, date : NSDate, type : EventType) {
+        var index = daysFromNow(date) - 7
+
+        for index; index < (daysFromNow(date) - 1) ; index++ {
+
+        }
+
+        // Set overdue alert.
+
+    }
 
     func setReminder(event : Avaliacao) {
         let eventName = event.nome
@@ -81,7 +106,7 @@ class NotificationController: NSObject {
             eventType = EventType.Exam
         }
 
-        setReminder(eventName, date: eventDate, type: eventType)
+        setReminder(event.nome, date: event.dataEntrega, type: eventType)
     }
-   
+
 }
