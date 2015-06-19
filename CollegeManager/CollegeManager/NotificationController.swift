@@ -13,6 +13,9 @@ class NotificationController: NSObject {
         case Exam
     }
 
+    private let remainingDaysUserInfo = "RemainingDaysReminder"
+    private let remainingDaysExamAlertBody = "Você tem uma prova daqui %i dias"
+    private let remainingDaysAssignmentAlertBody = "A entrega será em %i dias"
     private let deadlineDateUserInfo = "DeadlineDateReminder"
     private let deadlineExamDateAlertBody = "Você tem uma avaliação hoje!"
     private let deadlineAssignmentDateAlertBody = "Hoje é o dia da entrega!"
@@ -25,14 +28,24 @@ class NotificationController: NSObject {
         return daysFromNowComponent.day
     }
 
+    private func dateFromNow(numberOfDays : Int) -> NSDate {
+        return NSCalendar
+            .currentCalendar()
+            .dateByAddingUnit(
+                NSCalendarUnit.CalendarUnitDay,
+                value: numberOfDays,
+                toDate: NSDate(),
+                options: nil)!
+    }
+
     private func removeLocalNotification() {}
 
     private func setLocalNotification(
         fireDate : NSDate,
-        repeatInterval : NSCalendarUnit,
+        repeatInterval : NSCalendarUnit?,
         alertTitle : String,
         alertBody : String,
-        alertAction : String,
+        alertAction : String?,
         userInfo : String) {
 
         var notification = UILocalNotification()
@@ -43,14 +56,14 @@ class NotificationController: NSObject {
         notification.userInfo = [ "ID" : userInfo ]
 
         if repeatInterval != nil {
-            notification.repeatInterval = repeatInterval
+            notification.repeatInterval = repeatInterval!
         }
 
         if !alertTitle.isEmpty {
             notification.alertTitle = alertTitle
         }
 
-        if !alertAction.isEmpty {
+        if !alertAction!.isEmpty {
             notification.alertAction = alertAction
         }
 
@@ -61,38 +74,56 @@ class NotificationController: NSObject {
 
     }
 
-    private func setDeadlineReminder(eventName: String, eventDate : NSDate, eventType : EventType) {
+    private func setDeadlineReminder(name: String, date : NSDate, type : EventType) {
 
+        // Set a reminder for the event day.
 
-        let fireDate = eventDate
-        let alertTitle = eventName
         let alertBody : String
 
-        if eventType == EventType.Assignment {
+        if type == EventType.Assignment {
             alertBody = deadlineAssignmentDateAlertBody
         } else {
             alertBody = deadlineExamDateAlertBody
         }
 
-//        setLocalNotification(
-//            eventDate,
-//            repeatInterval: nil,
-//            alertTitle: alertTitle,
-//            alertBody: alertBody,
-//            alertAction: nil,
-//            userInfo: deadlineDateUserInfo
-//        )
+        setLocalNotification(
+            date,
+            repeatInterval: nil,
+            alertTitle: name,
+            alertBody: alertBody,
+            alertAction: nil,
+            userInfo: deadlineDateUserInfo
+        )
     }
 
     func setReminder(name : String, date : NSDate, type : EventType) {
-        var index = daysFromNow(date) - 7
+        let daysFromToday = daysFromNow(date)
+        var day = daysFromToday - 7
+        var duration = daysFromToday - 1
+        var alertBody : String
 
-        for index; index < (daysFromNow(date) - 1) ; index++ {
+        // Set a reminder to trigger everyday seven
+        // days prior to the event.
 
+        for day; day < duration ; day++ {
+
+            if type == EventType.Assignment {
+                alertBody = String(format: remainingDaysAssignmentAlertBody, day)
+            } else {
+                alertBody = String(format: remainingDaysExamAlertBody, day)
+            }
+
+            setLocalNotification(
+                dateFromNow(day),
+                repeatInterval: nil,
+                alertTitle: name,
+                alertBody: alertBody,
+                alertAction: nil,
+                userInfo: remainingDaysUserInfo
+            )
         }
 
-        // Set overdue alert.
-
+        setDeadlineReminder(name, date: date, type: type)
     }
 
     func setReminder(event : Avaliacao) {
