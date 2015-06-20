@@ -57,20 +57,29 @@ class AvaliacaoViewController: UIViewController {
     @IBAction func backButton(sender: UIButton) {
          self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         gradeTextfield.resignFirstResponder()
         examNameTextField.resignFirstResponder()
     }
     
-    
+    /// implementacao do deletar
     @IBAction func didPressedDeleteButton(sender: AnyObject) {
-        // implementar deletar
+
+        let am = AvaliacaoManager()
+        am.avaliacao = avaliacao
+        am.apagar()
+        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     @IBAction func didPressedCancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    /// Implementacao da edicao com os dados novos
     @IBAction func didPressedSaveButton(sender: UIButton) {
-        //implementar a edicao com os dados novos
         
         avaliacao?.nome = examNameTextField.text
         // o completo é modificado quando clica
@@ -79,6 +88,9 @@ class AvaliacaoViewController: UIViewController {
         let am = AvaliacaoManager()
         am.avaliacao = avaliacao
         am.salvar()
+        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
    
     @IBAction func didPressedCheckButton(sender: UIButton) {

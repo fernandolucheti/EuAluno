@@ -45,6 +45,18 @@ public class AvaliacaoManager {
         }
     }
     
+    func apagar()
+    {
+        managedContext.deleteObject(avaliacao!)
+        
+        var error:NSError?
+        managedContext.save(&error)
+        
+        if let e = error {
+            println("Could not save. Error: \(error), \(error!.userInfo)")
+        }
+    }
+    
     func buscarAvaliacoes() -> Array<Avaliacao>
     {
         let fetchRequest = NSFetchRequest(entityName: AvaliacaoManager.entityName)
