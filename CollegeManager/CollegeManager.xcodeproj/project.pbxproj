@@ -68,8 +68,8 @@
 		D60A08671B32B942007B25E6 /* Avaliacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A08661B32B942007B25E6 /* Avaliacao.swift */; };
 		D696068B1B291BE400C9E8F6 /* DisciplinaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */; };
 		D69606931B292F9300C9E8F6 /* Disciplina.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606921B292F9300C9E8F6 /* Disciplina.swift */; };
-		D69606961B29C2E500C9E8F6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69606951B29C2E500C9E8F6 /* CloudKit.framework */; };
 		D69606981B29C7BE00C9E8F6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */; };
+		D6D2CD2C1B34A6820098AEC9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D2CD2B1B34A6820098AEC9 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,8 +156,8 @@
 		D696068A1B291BE400C9E8F6 /* DisciplinaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisciplinaManager.swift; sourceTree = "<group>"; };
 		D69606921B292F9300C9E8F6 /* Disciplina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disciplina.swift; sourceTree = "<group>"; };
 		D69606941B29C2DD00C9E8F6 /* CollegeManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CollegeManager.entitlements; sourceTree = "<group>"; };
-		D69606951B29C2E500C9E8F6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D69606971B29C7BE00C9E8F6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
+		D6D2CD2B1B34A6820098AEC9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69606961B29C2E500C9E8F6 /* CloudKit.framework in Frameworks */,
+				D6D2CD2C1B34A6820098AEC9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +227,7 @@
 		8B30235B1B290C2000C21CFF = {
 			isa = PBXGroup;
 			children = (
+				D6D2CD2B1B34A6820098AEC9 /* CloudKit.framework */,
 				8B3023661B290C2000C21CFF /* CollegeManager */,
 				8B30237E1B290C2000C21CFF /* CollegeManagerTests */,
 				8B3023651B290C2000C21CFF /* Products */,
@@ -261,7 +262,6 @@
 		8B3023671B290C2000C21CFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D69606951B29C2E500C9E8F6 /* CloudKit.framework */,
 				D60A08631B3224D4007B25E6 /* Menu */,
 				D60A08621B3224C0007B25E6 /* Images */,
 				D60A08541B322444007B25E6 /* Picker */,
@@ -421,7 +421,6 @@
 				TargetAttributes = {
 					8B3023631B290C2000C21CFF = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 5MPGJ6276S;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;

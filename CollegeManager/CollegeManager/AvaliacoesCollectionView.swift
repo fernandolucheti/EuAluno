@@ -33,15 +33,14 @@ class AvaliacoesCollectionViewController: UICollectionViewController {
         var mainStoryboard = self.storyboard
         var vc = mainStoryboard!.instantiateViewControllerWithIdentifier("AvaliacaoController") as! AvaliacaoViewController
         
-        vc.grade = Double(avaliacoes[indexPath.item].nota)
-        vc.subjectName = avaliacoes[indexPath.item].disciplina.nome
-        vc.examName = avaliacoes[indexPath.item].nome
-        if avaliacoes[indexPath.item].completo == 1{
-            vc.checked = true
-        }else{
-            vc.checked = false
-        }
-        vc.date = avaliacoes[indexPath.item].dataEntrega
+        
+        vc.avaliacao = avaliacoes[indexPath.item]
+        
+//        if avaliacoes[indexPath.item].completo == 1{
+//            vc.checked = true
+//        }else{
+//            vc.checked = false
+//        }
         
 
         
