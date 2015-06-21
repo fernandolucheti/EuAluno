@@ -72,6 +72,12 @@ class AvaliacaoViewController: UIViewController {
     }
     @IBAction func didPressedSaveButton(sender: UIButton) {
         //implementar a edicao com os dados novos
+
+        // Remove event notifications.
+        if checked == true {
+            // TODO: Add missing event (Avaliacao) argument.
+            // NotificationController.removeReminder()
+        }
         
     }
    

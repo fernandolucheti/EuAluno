@@ -87,7 +87,11 @@ class CadastroViewController: UIViewController{
         avaliacao.disciplina = disciplinaManager.buscarDisciplina(disciplinaTextField.text)
 //        avaliacao.nota = 6                                      // Falta adicionar
         avaliacaoManager.salvar()
-        
+
+        // Add event notifications.
+        NotificationController().setReminder(avaliacao)
+
+        // FIXME: Is this set for removal?
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
         // Teste pra exibir --------
         //let ss = avaliacaoManager.buscarAvaliacoes()[0].nome

@@ -148,4 +148,8 @@ class NotificationController: NSObject {
         setReminder(event.nome, date: event.dataEntrega, type: eventType, ID: event.objectID)
     }
 
+    func removeReminder(event : Avaliacao) {
+        removeLocalNotification(event.objectID)
+    }
+
 }
