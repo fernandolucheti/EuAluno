@@ -81,12 +81,6 @@ class AvaliacaoViewController: UIViewController {
     /// Implementacao da edicao com os dados novos
     @IBAction func didPressedSaveButton(sender: UIButton) {
         //implementar a edicao com os dados novos
-
-        // Remove event notifications.
-        if checked == true {
-            // TODO: Add missing event (Avaliacao) argument.
-            // NotificationController.removeReminder()
-        }
         
         avaliacao?.nome = examNameTextField.text
         // o completo é modificado quando clica
@@ -95,7 +89,13 @@ class AvaliacaoViewController: UIViewController {
         let am = AvaliacaoManager()
         am.avaliacao = avaliacao
         am.salvar()
-        
+
+        // Remove event notifications.
+        if avaliacao!.completo == 1 {
+            NotificationController().removeReminder(avaliacao!)
+        }
+
+        // TODO: Is this set for removal?
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
         self.dismissViewControllerAnimated(true, completion: nil)
     }

@@ -27,7 +27,9 @@
     
     // Override point for customization after application launch.
    // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
+    // Register application to use notification services.
+    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:Nil]];
 
         //        //Override point for customization after application launch.
     _isFirstAccess = true;

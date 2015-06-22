@@ -20,6 +20,8 @@ class NotificationController: NSObject {
     private let deadlineExamDateAlertBody = "Você tem uma avaliação hoje!"
     private let deadlineAssignmentDateAlertBody = "Hoje é o dia da entrega!"
 
+    private let defaultTimeToDisplayAlert = 6
+
     private func daysFromNow(date: NSDate) -> Int {
         let daysFromNowComponent = NSCalendar
             .currentCalendar()
@@ -38,18 +40,14 @@ class NotificationController: NSObject {
                 options: nil)!
     }
 
-    private func removeLocalNotification(ID : NSManagedObjectID) {
+    private func removeLocalNotification(ID : String) {
         let application = UIApplication.sharedApplication()
-        var reminder : UILocalNotification
-        var userInfo : [String : AnyObject]
+        var userInfo : [String : String]
 
-        for notification in application.scheduledLocalNotifications {
-            reminder = notification as! UILocalNotification
-            userInfo = reminder.userInfo as! [String : NSManagedObjectID]
-
-            if ID == userInfo["ID"] as! NSManagedObjectID {
-                application.cancelLocalNotification(reminder)
-                break
+        for notification in application.scheduledLocalNotifications as! [UILocalNotification] {
+            println(" * \(notification)")
+            if ID == (notification.userInfo as! [String : String])["ID"] {
+                application.cancelLocalNotification(notification)
             }
         }
     }
@@ -60,34 +58,32 @@ class NotificationController: NSObject {
         alertTitle : String,
         alertBody : String,
         alertAction : String?,
-        userInfo : NSManagedObjectID) {
+        userInfo : String) {
 
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
         var notification = UILocalNotification()
 
-        notification.fireDate = fireDate
+        components.hour = 6
+
+        notification.fireDate = calendar.dateByAddingComponents(components, toDate: fireDate, options: nil)
         notification.alertBody = alertBody
         notification.soundName = UILocalNotificationDefaultSoundName
-        notification.userInfo = [ "ID" : userInfo ]
+        notification.userInfo = ["ID" : userInfo]
 
         if repeatInterval != nil {
             notification.repeatInterval = repeatInterval!
         }
 
-        if !alertTitle.isEmpty {
-            notification.alertTitle = alertTitle
-        }
-
-        if !alertAction!.isEmpty {
+        if alertAction != nil {
             notification.alertAction = alertAction
         }
 
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        println("Notification scheduled for: \(notification.fireDate)")
     }
 
-    private func setDeadlineReminder(name: String, date : NSDate, type : EventType, ID : NSManagedObjectID) {
-
-        // Set a reminder for the event day.
-
+    private func setDeadlineReminder(name: String, date : NSDate, type : EventType) {
         let alertBody : String
 
         if type == EventType.Assignment {
@@ -95,45 +91,42 @@ class NotificationController: NSObject {
         } else {
             alertBody = deadlineExamDateAlertBody
         }
-
-        setLocalNotification(
-            date,
-            repeatInterval: nil,
-            alertTitle: name,
-            alertBody: alertBody,
-            alertAction: nil,
-            userInfo: ID
-        )
+        setLocalNotification(date, repeatInterval: nil, alertTitle: name, alertBody: alertBody, alertAction: nil, userInfo: name)
     }
 
-    func setReminder(name : String, date : NSDate, type : EventType, ID : NSManagedObjectID) {
-        let daysFromToday = daysFromNow(date)
-        var day = daysFromToday - 7
-        var duration = daysFromToday - 1
+    // MARK: Add and Remove Alerts
+
+    func setReminder(name : String, date : NSDate, type : EventType) {
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+
+        var resultingDate : NSDate
+        var comparisonResult : NSComparisonResult
         var alertBody : String
 
-        // Set a reminder to trigger everyday seven
-        // days prior to the event.
+        // Reverse count from the event date by subtracting
+        // days and set an alert up after verifying the
+        // firedate is happening after today.
 
-        for day; day < duration ; day++ {
+        for var index = -1; index > -7; index-- {
+            components.day = index
+            resultingDate = calendar.dateByAddingComponents(components, toDate: date, options: nil)!
+            comparisonResult = calendar.compareDate(resultingDate, toDate: NSDate(), toUnitGranularity: NSCalendarUnit.CalendarUnitDay)
 
-            if type == EventType.Assignment {
-                alertBody = String(format: remainingDaysAssignmentAlertBody, day)
+            // Check whether both dates are different.
+
+            if comparisonResult != NSComparisonResult.OrderedSame {
+                if type == EventType.Assignment {
+                    alertBody = String(format: remainingDaysAssignmentAlertBody, abs(index))
+                } else {
+                    alertBody = String(format: remainingDaysExamAlertBody, abs(index))
+                }
+                setLocalNotification(resultingDate, repeatInterval: nil, alertTitle: name, alertBody: alertBody, alertAction: nil, userInfo: name)
             } else {
-                alertBody = String(format: remainingDaysExamAlertBody, day)
+                break
             }
-
-            setLocalNotification(
-                dateFromNow(day),
-                repeatInterval: nil,
-                alertTitle: name,
-                alertBody: alertBody,
-                alertAction: nil,
-                userInfo: ID
-            )
         }
-
-        setDeadlineReminder(name, date: date, type: type, ID: ID)
+        setDeadlineReminder(name, date: date, type: type)
     }
 
     func setReminder(event : Avaliacao) {
@@ -144,12 +137,11 @@ class NotificationController: NSObject {
         } else {
             eventType = EventType.Exam
         }
-
-        setReminder(event.nome, date: event.dataEntrega, type: eventType, ID: event.objectID)
+        setReminder(event.nome, date: event.dataEntrega, type: eventType)
     }
 
     func removeReminder(event : Avaliacao) {
-        removeLocalNotification(event.objectID)
+        removeLocalNotification(event.nome)
     }
 
 }

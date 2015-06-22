@@ -18,6 +18,7 @@ class CadastroViewController: UIViewController{
     var downPicker: DownPicker?
 
     override func viewDidAppear(animated: Bool) {
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reload"), name: "newDisciplina", object: nil)
     }
     func reload(){
@@ -30,6 +31,17 @@ class CadastroViewController: UIViewController{
         downPicker = DownPicker(textField: disciplinaTextField, withData: disciplinas)
     }
     override func viewDidLoad() {
+
+        // Set datePicker to start counting from tomorrow.
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+
+        components.day = 1
+
+        let tomorrow = calendar.dateByAddingComponents(components, toDate: NSDate(), options: nil)
+
+        datePicker.minimumDate = tomorrow
+
 //        super.viewDidLoad()
 //        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 //        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"b"];
@@ -91,7 +103,6 @@ class CadastroViewController: UIViewController{
         // Add event notifications.
         NotificationController().setReminder(avaliacao)
 
-        // FIXME: Is this set for removal?
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "newTrabalho", object: nil))
         // Teste pra exibir --------
         //let ss = avaliacaoManager.buscarAvaliacoes()[0].nome
