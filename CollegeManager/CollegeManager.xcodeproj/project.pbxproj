@@ -266,14 +266,6 @@
 				D60A08621B3224C0007B25E6 /* Images */,
 				D60A08541B322444007B25E6 /* Picker */,
 				8B30239C1B290C9800C21CFF /* main.m */,
-				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
-				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
-				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
-				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
-				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
-				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
-				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
-				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
 				8B30238B1B290C4600C21CFF /* CollegeManager-Bridging-Header.h */,
 				8B3023681B290C2000C21CFF /* Info.plist */,
 			);
@@ -348,6 +340,14 @@
 		D60A08631B3224D4007B25E6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				8B30239D1B290C9800C21CFF /* HKAppDelegate.h */,
+				8B30239E1B290C9800C21CFF /* HKAppDelegate.m */,
+				8B30239F1B290C9800C21CFF /* HKRotationNavigationController.h */,
+				8B3023A01B290C9800C21CFF /* HKRotationNavigationController.m */,
+				8B3023A11B290C9800C21CFF /* HKMenuView.h */,
+				8B3023A21B290C9800C21CFF /* HKMenuView.m */,
+				8B3023A31B290C9800C21CFF /* HKSlideMenu3DController.h */,
+				8B3023A41B290C9800C21CFF /* HKSlideMenu3DController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";

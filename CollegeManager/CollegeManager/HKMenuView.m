@@ -32,7 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     images = @[@"mail-ico",@"call-ico",@"call-ico",@"call-ico"];
-    titles = @[@"+ Disciplina",@"+ Trabalho",@"+ Prova",@"Agenda"];
+    //titles = @[@"+ Disciplina",@"+ Trabalho",@"+ Prova",@"Agenda"];
+    titles = @[@"+ Disciplina",@"+ Trabalho",@"+ Prova"];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -49,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return images.count;
+    return titles.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
